@@ -5917,3 +5917,182 @@ Started GET "/assets/omniauth_callbacks-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body
 
 
 Started GET "/assets/application-fd30b062dffa1f37a416cebd713ed694.js?body=1" for 127.0.0.1 at 2015-01-26 22:22:53 -0500
+
+
+Started GET "/users/auth/google_oauth2/callback" for 127.0.0.1 at 2015-01-26 22:35:36 -0500
+Processing by OmniauthCallbacksController#failure as HTML
+Redirected to http://localhost:3000/users/login
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2015-01-26 22:35:36 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/master/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (5.9ms)
+  Rendered /home/master/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 62ms (Views: 60.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-01-26 22:35:36 -0500
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-01-26 22:35:36 -0500
+
+
+Started GET "/assets/omniauth_callbacks-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-01-26 22:35:36 -0500
+
+
+Started GET "/assets/home-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-01-26 22:35:36 -0500
+
+
+Started GET "/assets/turbolinks-686d2bf7d9d383528c901c64187a8c31.js?body=1" for 127.0.0.1 at 2015-01-26 22:35:36 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-01-26 22:35:36 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-01-26 22:35:36 -0500
+
+
+Started GET "/assets/omniauth_callbacks-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-01-26 22:35:36 -0500
+
+
+Started GET "/assets/application-fd30b062dffa1f37a416cebd713ed694.js?body=1" for 127.0.0.1 at 2015-01-26 22:35:36 -0500
+
+
+Started GET "/users/login" for 127.0.0.1 at 2015-01-26 22:40:55 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/master/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (8.5ms)
+  Rendered /home/master/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (113.9ms)
+Completed 500 Internal Server Error in 299ms
+
+ActionView::Template::Error (No route matches {:action=>"passthru", :controller=>"omniauth_callbacks", :format=>nil, :provider=>:facebook} missing required keys: [:provider]):
+    15:   <% else %>
+    16:     <%= link_to "Sign up", new_user_registration_path %> |
+    17:     <%= link_to "sign in", new_user_session_path %> |
+    18:     <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+    19:   <% end %>
+    20: </div>
+    21: 
+  app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb__1925514120312895182_69987668203540'
+
+
+  Rendered /home/master/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (7.2ms)
+  Rendered /home/master/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /home/master/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/master/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.6ms)
+  Rendered /home/master/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (25.2ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2015-01-26 22:42:28 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/master/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (6.3ms)
+  Rendered /home/master/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (15.4ms)
+Completed 500 Internal Server Error in 60ms
+
+ActionView::Template::Error (No route matches {:action=>"passthru", :controller=>"omniauth_callbacks", :format=>nil, :provider=>:facebook} missing required keys: [:provider]):
+    15:   <% else %>
+    16:     <%= link_to "Sign up", new_user_registration_path %> |
+    17:     <%= link_to "sign in", new_user_session_path %> |
+    18:     <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+    19:   <% end %>
+    20: </div>
+    21: 
+  app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb__1925514120312895182_69987668203540'
+
+
+  Rendered /home/master/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (7.2ms)
+  Rendered /home/master/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /home/master/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/master/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /home/master/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (26.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-26 22:44:20 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 81ms (Views: 74.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-01-26 22:44:20 -0500
+
+
+Started GET "/assets/omniauth_callbacks-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-01-26 22:44:20 -0500
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-01-26 22:44:20 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-01-26 22:44:20 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-01-26 22:44:20 -0500
+
+
+Started GET "/assets/turbolinks-686d2bf7d9d383528c901c64187a8c31.js?body=1" for 127.0.0.1 at 2015-01-26 22:44:20 -0500
+
+
+Started GET "/assets/home-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-01-26 22:44:20 -0500
+
+
+Started GET "/assets/omniauth_callbacks-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-01-26 22:44:20 -0500
+
+
+Started GET "/assets/application-fd30b062dffa1f37a416cebd713ed694.js?body=1" for 127.0.0.1 at 2015-01-26 22:44:20 -0500
+
+
+Started GET "/users/login" for 127.0.0.1 at 2015-01-26 22:44:25 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/master/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (8.3ms)
+  Rendered /home/master/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (31.0ms)
+Completed 200 OK in 96ms (Views: 85.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/auth/google_oauth2" for 127.0.0.1 at 2015-01-26 22:44:27 -0500
+
+
+Started GET "/users/auth/google_oauth2" for 127.0.0.1 at 2015-01-26 22:44:27 -0500
+
+
+Started GET "/users/auth/google_oauth2/callback?state=0fed974c258c98771b237f25218fa42bbcbe0f5bb656a5fe&code=4/d9UfNfKAx2GvTRVTP3Fio5Q3724CnQ4WreYbnOu6Szg.0qs45pDZJE0a3oEBd8DOtNAN3v5SlgI" for 127.0.0.1 at 2015-01-26 22:44:32 -0500
+Processing by OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"0fed974c258c98771b237f25218fa42bbcbe0f5bb656a5fe", "code"=>"4/d9UfNfKAx2GvTRVTP3Fio5Q3724CnQ4WreYbnOu6Szg.0qs45pDZJE0a3oEBd8DOtNAN3v5SlgI"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "bptruereaper@gmail.com"]]
+Completed 500 Internal Server Error in 16ms
+
+RuntimeError (#<User id: 3, email: "bptruereaper@gmail.com", encrypted_password: "$2a$10$8egILtm5G5FhLEggIE0JleWRDukCV7Ij3.F39z6cUCr...", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2015-01-25 20:04:26", last_sign_in_at: "2015-01-25 20:04:26", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", created_at: "2015-01-25 20:04:26", updated_at: "2015-01-25 20:04:26", provider: nil, uid: nil>):
+  app/controllers/omniauth_callbacks_controller.rb:5:in `all'
+
+
+  Rendered /home/master/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (5.7ms)
+  Rendered /home/master/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/master/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/master/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.6ms)
+  Rendered /home/master/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (22.5ms)
+
+
+Started GET "/users/auth/google_oauth2/callback?state=0fed974c258c98771b237f25218fa42bbcbe0f5bb656a5fe&code=4/zRXjK6C8rihYdW6dGJ-7J5Q3724CnQ4WreYbnOu6Szg.okjQRG5r51kUqPsZ5lQMyhEWYP9SlgI" for 127.0.0.1 at 2015-01-26 22:44:49 -0500
+Processing by OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"0fed974c258c98771b237f25218fa42bbcbe0f5bb656a5fe", "code"=>"4/zRXjK6C8rihYdW6dGJ-7J5Q3724CnQ4WreYbnOu6Szg.okjQRG5r51kUqPsZ5lQMyhEWYP9SlgI"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "bptruereaper@gmail.com"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2015-01-27 03:44:50.150460"], ["sign_in_count", 2], ["updated_at", "2015-01-27 03:44:50.152024"], ["id", 3]]
+  [1m[35m (102.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 116ms (ActiveRecord: 103.6ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2015-01-26 22:44:52 -0500
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-26 22:44:52 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+Completed 200 OK in 43ms (Views: 41.8ms | ActiveRecord: 0.1ms)

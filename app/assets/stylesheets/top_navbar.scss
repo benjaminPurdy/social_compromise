@@ -1,0 +1,31 @@
+@import 'variables';
+
+.user_nav {
+  background-color: red;
+  position: absolute;
+  height: $user_nav_height;
+  width: 100%;
+  .logo {
+    float: left;
+    width: 33%;
+    margin-top: $user_nav_height/2 - 10;
+
+  }
+  .search {
+    float: left;
+    width: 33%;
+    margin-top: $user_nav_height/2 - 10;
+  }
+  .user_settings {
+    float: left;
+    width: 33%;
+    margin-top: $user_nav_height/2 - 20;
+    text-align: right;
+    vertical-align: middle;
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+    }
+  }
+}

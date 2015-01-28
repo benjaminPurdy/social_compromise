@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
       user.provider = user_information.provider
       user.uid = user_information.uid
       user.email = user_information.info.email
+      user.photo = user_information.info.image
     end
 
   end

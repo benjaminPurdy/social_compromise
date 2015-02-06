@@ -1,0 +1,170 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install', '-g', 'react' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 verbose node symlink /usr/bin/node
+5 verbose cache add [ 'react', null ]
+6 verbose cache add name=undefined spec="react" args=["react",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'react',
+7 verbose parsed url   path: 'react',
+7 verbose parsed url   href: 'react' }
+8 silly lockFile 6b810c90-react react
+9 verbose lock react /home/master/.npm/6b810c90-react.lock
+10 silly lockFile 6b810c90-react react
+11 silly lockFile 6b810c90-react react
+12 verbose addNamed [ 'react', '' ]
+13 verbose addNamed [ null, '*' ]
+14 silly lockFile 0baa5bb3-react react@
+15 verbose lock react@ /home/master/.npm/0baa5bb3-react.lock
+16 silly addNameRange { name: 'react', range: '*', hasData: false }
+17 verbose request where is /react
+18 verbose request registry https://registry.npmjs.org/
+19 verbose request id 15f599758718761f
+20 verbose url raw /react
+21 verbose url resolving [ 'https://registry.npmjs.org/', './react' ]
+22 verbose url resolved https://registry.npmjs.org/react
+23 verbose request where is https://registry.npmjs.org/react
+24 info trying registry request attempt 1 at 00:35:49
+25 verbose etag "CMCCNXCO2NUY5ICLK7PI0CC4Q"
+26 http GET https://registry.npmjs.org/react
+27 http 304 https://registry.npmjs.org/react
+28 silly registry.get cb [ 304,
+28 silly registry.get   { date: 'Wed, 28 Jan 2015 05:35:54 GMT',
+28 silly registry.get     server: 'Apache',
+28 silly registry.get     via: '1.1 varnish',
+28 silly registry.get     'last-modified': 'Wed, 28 Jan 2015 05:35:54 GMT',
+28 silly registry.get     'cache-control': 'max-age=60',
+28 silly registry.get     etag: '"CMCCNXCO2NUY5ICLK7PI0CC4Q"',
+28 silly registry.get     age: '58',
+28 silly registry.get     'x-served-by': 'cache-iad2125-IAD',
+28 silly registry.get     'x-cache': 'HIT',
+28 silly registry.get     'x-cache-hits': '1',
+28 silly registry.get     'x-timer': 'S1422423354.620664,VS0,VE0',
+28 silly registry.get     vary: 'Accept',
+28 silly registry.get     'content-length': '0',
+28 silly registry.get     'keep-alive': 'timeout=10, max=50',
+28 silly registry.get     connection: 'Keep-Alive' } ]
+29 verbose etag https://registry.npmjs.org/react from cache
+30 silly addNameRange number 2 { name: 'react', range: '*', hasData: true }
+31 silly addNameRange versions [ 'react',
+31 silly addNameRange   [ '0.0.1',
+31 silly addNameRange     '0.0.2',
+31 silly addNameRange     '0.0.3',
+31 silly addNameRange     '0.1.2',
+31 silly addNameRange     '0.2.0',
+31 silly addNameRange     '0.2.1',
+31 silly addNameRange     '0.2.2',
+31 silly addNameRange     '0.2.3',
+31 silly addNameRange     '0.2.4',
+31 silly addNameRange     '0.2.5',
+31 silly addNameRange     '0.2.6',
+31 silly addNameRange     '0.3.0',
+31 silly addNameRange     '0.3.4',
+31 silly addNameRange     '0.3.5',
+31 silly addNameRange     '0.5.0',
+31 silly addNameRange     '0.5.1',
+31 silly addNameRange     '0.5.2',
+31 silly addNameRange     '0.6.0',
+31 silly addNameRange     '0.6.1',
+31 silly addNameRange     '0.6.2',
+31 silly addNameRange     '0.6.3',
+31 silly addNameRange     '0.7.0',
+31 silly addNameRange     '0.7.1',
+31 silly addNameRange     '0.8.0',
+31 silly addNameRange     '0.9.0-rc1',
+31 silly addNameRange     '0.9.0',
+31 silly addNameRange     '0.10.0-rc1',
+31 silly addNameRange     '0.10.0',
+31 silly addNameRange     '0.11.0-rc1',
+31 silly addNameRange     '0.11.0',
+31 silly addNameRange     '0.11.1',
+31 silly addNameRange     '0.11.2',
+31 silly addNameRange     '0.12.0-rc1',
+31 silly addNameRange     '0.12.0',
+31 silly addNameRange     '0.12.1',
+31 silly addNameRange     '0.12.2',
+31 silly addNameRange     '0.13.0-alpha.1',
+31 silly addNameRange     '0.13.0-alpha.2',
+31 silly addNameRange     '0.13.0-beta.1' ] ]
+32 verbose addNamed [ 'react', '0.12.2' ]
+33 verbose addNamed [ '0.12.2', '0.12.2' ]
+34 silly lockFile 1f2cec02-react-0-12-2 react@0.12.2
+35 verbose lock react@0.12.2 /home/master/.npm/1f2cec02-react-0-12-2.lock
+36 silly lockFile 1f2cec02-react-0-12-2 react@0.12.2
+37 silly lockFile 1f2cec02-react-0-12-2 react@0.12.2
+38 silly lockFile 0baa5bb3-react react@
+39 silly lockFile 0baa5bb3-react react@
+40 silly resolved [ { name: 'react',
+40 silly resolved     description: 'React is a JavaScript library for building user interfaces.',
+40 silly resolved     version: '0.12.2',
+40 silly resolved     keywords: [ 'react' ],
+40 silly resolved     homepage: 'https://github.com/facebook/react/tree/master/npm-react',
+40 silly resolved     bugs: { url: 'https://github.com/facebook/react/issues?labels=react-core' },
+40 silly resolved     license: 'BSD-3-Clause',
+40 silly resolved     files: [ 'README.md', 'addons.js', 'react.js', 'dist/', 'lib/' ],
+40 silly resolved     main: 'react.js',
+40 silly resolved     repository: { type: 'git', url: 'https://github.com/facebook/react' },
+40 silly resolved     engines: { node: '>=0.10.0' },
+40 silly resolved     dependencies: { envify: '^3.0.0' },
+40 silly resolved     browserify: { transform: [Object] },
+40 silly resolved     _id: 'react@0.12.2',
+40 silly resolved     _shasum: '1c4f0b08818146eeab4f0ab39257e0aa52027e00',
+40 silly resolved     _resolved: 'https://registry.npmjs.org/react/-/react-0.12.2.tgz',
+40 silly resolved     _from: 'react@',
+40 silly resolved     scripts: {},
+40 silly resolved     _npmVersion: '2.1.11',
+40 silly resolved     _nodeVersion: '0.10.32',
+40 silly resolved     _npmUser: { name: 'zpao', email: 'paul@oshannessy.com' },
+40 silly resolved     maintainers: [ [Object], [Object] ],
+40 silly resolved     dist:
+40 silly resolved      { shasum: '1c4f0b08818146eeab4f0ab39257e0aa52027e00',
+40 silly resolved        tarball: 'http://registry.npmjs.org/react/-/react-0.12.2.tgz' },
+40 silly resolved     directories: {},
+40 silly resolved     readme: 'ERROR: No README data found!' } ]
+41 info install react@0.12.2 into /usr/lib
+42 info installOne react@0.12.2
+43 verbose lib/node_modules/react unbuild
+44 verbose tar unpack /home/master/.npm/react/0.12.2/package.tgz
+45 silly lockFile 69d89391-tar-usr-lib-node-modules-react tar:///usr/lib/node_modules/react
+46 verbose lock tar:///usr/lib/node_modules/react /home/master/.npm/69d89391-tar-usr-lib-node-modules-react.lock
+47 silly lockFile 41c0ed55-ter-npm-react-0-12-2-package-tgz tar:///home/master/.npm/react/0.12.2/package.tgz
+48 verbose lock tar:///home/master/.npm/react/0.12.2/package.tgz /home/master/.npm/41c0ed55-ter-npm-react-0-12-2-package-tgz.lock
+49 silly gunzTarPerm modes [ '775', '664' ]
+50 error Error: EACCES, mkdir '/usr/lib/node_modules/react'
+50 error  { [Error: EACCES, mkdir '/usr/lib/node_modules/react']
+50 error   errno: 3,
+50 error   code: 'EACCES',
+50 error   path: '/usr/lib/node_modules/react',
+50 error   fstream_type: 'Directory',
+50 error   fstream_path: '/usr/lib/node_modules/react',
+50 error   fstream_class: 'DirWriter',
+50 error   fstream_stack:
+50 error    [ '/usr/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+50 error      '/usr/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53',
+50 error      'Object.oncomplete (fs.js:107:15)' ] }
+51 error Please try running this command again as root/Administrator.
+52 error System Linux 3.13.0-40-generic
+53 error command "/usr/bin/node" "/usr/bin/npm" "install" "-g" "react"
+54 error cwd /home/master/projects/social_compromise/src/main/ui
+55 error node -v v0.10.33
+56 error npm -v 1.4.28
+57 error path /usr/lib/node_modules/react
+58 error fstream_path /usr/lib/node_modules/react
+59 error fstream_type Directory
+60 error fstream_class DirWriter
+61 error code EACCES
+62 error errno 3
+63 error stack Error: EACCES, mkdir '/usr/lib/node_modules/react'
+64 error fstream_stack /usr/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+64 error fstream_stack /usr/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53
+64 error fstream_stack Object.oncomplete (fs.js:107:15)
+65 verbose exit [ 3, true ]

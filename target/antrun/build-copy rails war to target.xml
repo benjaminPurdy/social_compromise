@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="copy rails war to target"  >
+<target name="copy rails war to target">
+  <move file="/home/master/projects/social_compromise/src/main/rails/rails.war" tofile="${project.build.direcotyr}/social_compromise-0.0.1-SNAPSHOT.jar"/>
+</target>
+</project>

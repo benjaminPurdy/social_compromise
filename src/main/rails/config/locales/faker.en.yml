@@ -1,0 +1,20 @@
+en:
+  faker:
+    community:
+      location: [North, East, South, West]
+      healthcare_system:
+            [Orthodontic Associates Center,
+            Health and Homecare Services,
+            Hospital,
+            County Hospital,
+            County Medical Center,
+            Family Clinic,
+            Foot and Ankle Clinic,
+            Community Hospital,
+            Medical Health Center,
+            Regional Medical Center,
+            Foot Clinic,
+            Branch Memorial Hospital]
+      type: [User Group, Community]
+      name:
+            - "#{location} #{Address.city} #{healthcare_system} #{type}"

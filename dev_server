@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+Process.spawn('./bin/rails', 'server')
+Process.spawn('gulp')
+Process.waitall

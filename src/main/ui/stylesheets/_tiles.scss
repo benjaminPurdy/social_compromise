@@ -1,0 +1,16 @@
+.ss-tile-layout {
+  position: relative;
+}
+
+.ss-tile {
+  position: absolute;
+  display: block;
+}
+
+.ss-is-mobile .ss-tile {
+  transition-property: top, left, width, height, font-size;
+  transition-duration: 250ms;
+  -webkit-transition-property: top, left, width, height;
+  -webkit-transition-duration: 250ms;
+}
+

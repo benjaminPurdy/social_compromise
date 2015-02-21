@@ -1,0 +1,68 @@
+.ss-community-discussions-header {
+  font-size: 21px;
+  display: none;
+}
+
+.ss-community-discussion {
+  padding: 14px 0;
+  color: #4B5A51;
+  border-top: 1px solid #e4e8eb;
+  
+  &:first-child {
+    border-top: 0;
+  }
+  
+}
+
+.ss-community-discussion-profile-image-container {
+  position: relative;
+  float: left;
+  margin-right: 15px;
+}
+
+.ss-community-discussion-profile-image {
+  height: 50px;
+  width: 50px;
+}
+
+.ss-community-discussion-profile-mask {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: auto;
+  left: 0px;
+  background-repeat: no-repeat;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6REE5RTFDMDNBODgxMTFFNDhBMEJFNjJEN0E1QzNDOEUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6REE5RTFDMDRBODgxMTFFNDhBMEJFNjJEN0E1QzNDOEUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpEQTlFMUMwMUE4ODExMUU0OEEwQkU2MkQ3QTVDM0M4RSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpEQTlFMUMwMkE4ODExMUU0OEEwQkU2MkQ3QTVDM0M4RSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PpX86vEAAAJnSURBVHja3Jq7SyNRFMbPTLGFhCULayOsGxXfzaJusaUiAQvtRF0hlnErbfwH/CcsRRB8tFsIsmpp4SNpVCIquoIgayH4AC02fkfPwDA60UxmzL33g1+VzMz5cnLv3HPvsfIQhaNTsAY2QQ4cgwtwA/gZMfAZJEAj6ACd4EsYD7dKNPIXzIB5sBvwHi1gEKTA18CR5IMpC/qBzb9DSNhyz2yQgIo1cg5GgBWiAS+WPOM8KiOLIB6hAS9xeWZoRu7Ar3c04GVUYijJyBVIltGEQ1Ji8VWhWesWdIN1UkM/wB9Q8dKHts9F96BXIRMksfRJbG82Mg5WST2tgLG3vkfmFRgTrzH32hg5A63gktRWHOyAKr+/1oQGJkhinPBba23LQi5PesiSBWqbNyOTGpkgiXXSm5ETUAv+k17iRByAGicjsxqaIIl52p0Rrgn2SE81cCHHRrg4qia9dWgr+gYvVmu2TGG6K8tG9g0wkmMjhwYYOWIj/wwwcmmFt61VVn2wyRCxkY8G+IixkUoDjHxiI3UGGKm1Za2iuxptKaZ01zejFo18PtGssYl6Z4ywhjU2MuAurI5l9tK+1E3Q0xapbuKYa9wZYW2B72TAdlA7GNIoG0OOCW9GWMZsmfIHUxpkY8pt4lE+B0CjCu/Ep4s5seLDlB4Fd1i6wBIXUs9GvulHbyQXLIOkAiaSEktFoTdjwcoL/AbpMppISwyxgt9SvGFgIcoWjtQ7tHCkomzhcCsTYVNNJkhAYbU5zVHwY4km8JNKbHMq1YjXFDeebdDTfjKXBtx4du2aOJzGswZZoHaGVZ0+CDAA9XA8lww142AAAAAASUVORK5CYII=);
+}
+
+.ss-community-discussion-title {
+  font-size: 16px;
+  margin-top: 0;
+}
+
+.ss-community-discussion-content-container {
+  margin-left: 70px;
+}
+
+.ss-community-discussion-title {
+  margin-top: 0;
+}
+
+.ss-community-discussion-content {
+  margin: 7px 0;
+}
+
+.ss-community-discussion-meta {
+  font-size: 12px;
+  color: #888;
+}
+
+.ss-community-discussion-meta-user {
+  font-weight: 600;
+}
+
+.ss-community-discussion-content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

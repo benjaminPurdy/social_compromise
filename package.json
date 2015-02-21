@@ -1,0 +1,41 @@
+{
+  "name": "Snowstorm",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "css-loader": "^0.7.1",
+    "es6-promise": "^1.0.0",
+    "event-emitter": "^0.3.1",
+    "react": "^0.12.0",
+    "react-router": "^0.11.4",
+    "style-loader": "^0.7.0",
+    "querystring": "^0.2.0",
+    "es5-ext": "~0.10.2",
+    "d": "~0.1.1",
+    "jquery": "~1.11.0",
+    "react-bootstrap": "^0.12.0",
+    "flux": "^2.0.0",
+    "keymirror": "~0.1.0",
+    "object-assign": "^1.0.0",
+    "velocity-animate": "1.0.0"
+  },
+  "devDependencies": {
+    "file-loader": "^0.8.1",
+    "gulp": "^3.8.7",
+    "gulp-jest": "0.2.2",
+    "gulp-util": "^3.0.0",
+    "image-webpack-loader": "1.0.0",
+    "imports-loader": "0.6.3",
+    "jasmine": "^2.0.1",
+    "jsx-loader": "~0.12.1",
+    "less-loader": "0.7.7",
+    "react-tools": "^0.12.1",
+    "sass-loader": "^0.2.0",
+    "script-loader": "0.6.1",
+    "url-loader": "^0.5.5",
+    "webpack": "^1.4.7",
+    "webpack-dev-server": "^1.6.5",
+    "moment": "2.9.0"
+  }
+}

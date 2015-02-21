@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20150122183052_add_first_time_login_to_people.rb

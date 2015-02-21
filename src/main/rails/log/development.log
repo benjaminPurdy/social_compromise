@@ -1,0 +1,484 @@
+  [1m[36mApplicationAccessToken Load (5.0ms)[0m  [1mSELECT  "application_access_tokens".* FROM "application_access_tokens"  WHERE "application_access_tokens"."name" = 'snowstorm_admin' AND "application_access_tokens"."source_type_index" = 0 LIMIT 1[0m
+  [1m[36mApplicationAccessToken Load (5.0ms)[0m  [1mSELECT  "application_access_tokens".* FROM "application_access_tokens"  WHERE "application_access_tokens"."name" = 'snowstorm_admin' AND "application_access_tokens"."source_type_index" = 0 LIMIT 1[0m
+
+
+Started GET "/" for 0:0:0:0:0:0:0:1 at 2015-02-20 19:59:44 -0500
+  [1m[35mActiveRecord::SchemaMigration Load (2.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by HomePageController#index as HTML
+  [1m[36mPerson Load (4.0ms)[0m  [1mSELECT  "people".* FROM "people"  WHERE "people"."username" = 'knell'  ORDER BY "people"."id" ASC LIMIT 1[0m
+  [1m[35mSQL (16.0ms)[0m  UPDATE "people" SET "last_login" = '2015-02-21 00:59:44.550000', "updated_at" = '2015-02-21 00:59:44.560000' WHERE "people"."id" = 18
+  [1m[36mApplicationMetadatum Exists (4.0ms)[0m  [1mSELECT  1 AS one FROM "application_metadata"  WHERE "application_metadata"."person_id" = 18 LIMIT 1[0m
+  [1m[35mApplication Load (43.0ms)[0m  SELECT DISTINCT "applications".* FROM "applications" INNER JOIN "application_token_mappings" ON "application_token_mappings"."application_id" = "applications"."id" INNER JOIN "application_access_tokens" ON "application_access_tokens"."id" = "application_token_mappings"."application_access_token_id" INNER JOIN "application_access_keys" ON "application_access_keys"."token_id" = "application_access_tokens"."id" INNER JOIN "people" ON "people"."id" = "application_access_keys"."person_id" WHERE "people"."id" = 18
+  [1m[36mApplicationBlurb Load (22.0ms)[0m  [1mSELECT "application_blurbs".* FROM "application_blurbs"  WHERE "application_blurbs"."application_id" IN (432, 372, 383, 369, 387, 407, 378, 391, 394, 399, 403, 415, 406, 368, 422, 371, 376, 390, 397, 396, 410, 382, 365, 386, 417, 395, 393, 435, 472, 411, 423, 379, 414, 373, 419, 421, 439, 400, 473, 384, 420, 412, 437, 380, 366, 427, 438, 370, 385, 389, 388, 367, 402, 436, 375, 392, 418, 416, 398, 377, 413, 433, 374, 434, 381, 405)[0m
+  [1m[35mApplicationMetadatum Load (17.0ms)[0m  SELECT "application_metadata".* FROM "application_metadata"  WHERE "application_metadata"."person_id" = 18  ORDER BY "application_metadata"."position" ASC
+  Rendered home_page/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 1498ms (Views: 33.0ms | ActiveRecord: 129.0ms)
+
+
+Started GET "/" for 0:0:0:0:0:0:0:1 at 2015-02-20 19:59:46 -0500
+Processing by HomePageController#index as HTML
+  [1m[36mPerson Load (3.0ms)[0m  [1mSELECT  "people".* FROM "people"  WHERE "people"."username" = 'knell'  ORDER BY "people"."id" ASC LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "people" SET "last_login" = '2015-02-21 00:59:46.052000', "updated_at" = '2015-02-21 00:59:46.053000' WHERE "people"."id" = 18
+  [1m[36mApplicationMetadatum Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "application_metadata"  WHERE "application_metadata"."person_id" = 18 LIMIT 1[0m
+  [1m[35mApplication Load (43.0ms)[0m  SELECT DISTINCT "applications".* FROM "applications" INNER JOIN "application_token_mappings" ON "application_token_mappings"."application_id" = "applications"."id" INNER JOIN "application_access_tokens" ON "application_access_tokens"."id" = "application_token_mappings"."application_access_token_id" INNER JOIN "application_access_keys" ON "application_access_keys"."token_id" = "application_access_tokens"."id" INNER JOIN "people" ON "people"."id" = "application_access_keys"."person_id" WHERE "people"."id" = 18
+  [1m[36mApplicationBlurb Load (21.0ms)[0m  [1mSELECT "application_blurbs".* FROM "application_blurbs"  WHERE "application_blurbs"."application_id" IN (432, 372, 383, 369, 387, 407, 378, 391, 394, 399, 403, 415, 406, 368, 422, 371, 376, 390, 397, 396, 410, 382, 365, 386, 417, 395, 393, 435, 472, 411, 423, 379, 414, 373, 419, 421, 439, 400, 473, 384, 420, 412, 437, 380, 366, 427, 438, 370, 385, 389, 388, 367, 402, 436, 375, 392, 418, 416, 398, 377, 413, 433, 374, 434, 381, 405)[0m
+  [1m[35mApplicationMetadatum Load (14.0ms)[0m  SELECT "application_metadata".* FROM "application_metadata"  WHERE "application_metadata"."person_id" = 18  ORDER BY "application_metadata"."position" ASC
+  Rendered home_page/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 403ms (Views: 16.0ms | ActiveRecord: 83.0ms)
+
+
+Started GET "/assets/main.js" for 0:0:0:0:0:0:0:1 at 2015-02-20 19:59:46 -0500
+  [1m[36mApplicationAccessToken Load (5.0ms)[0m  [1mSELECT  "application_access_tokens".* FROM "application_access_tokens"  WHERE "application_access_tokens"."name" = 'snowstorm_admin' AND "application_access_tokens"."source_type_index" = 0 LIMIT 1[0m
+  [1m[36mApplicationAccessToken Load (4.0ms)[0m  [1mSELECT  "application_access_tokens".* FROM "application_access_tokens"  WHERE "application_access_tokens"."name" = 'snowstorm_admin' AND "application_access_tokens"."source_type_index" = 0 LIMIT 1[0m
+
+
+Started GET "/" for 0:0:0:0:0:0:0:1 at 2015-02-20 20:20:02 -0500
+  [1m[35mActiveRecord::SchemaMigration Load (2.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by HomePageController#index as HTML
+  [1m[36mPerson Load (2.0ms)[0m  [1mSELECT  "people".* FROM "people"  WHERE "people"."username" = 'knell'  ORDER BY "people"."id" ASC LIMIT 1[0m
+  [1m[35mSQL (3.0ms)[0m  UPDATE "people" SET "last_login" = '2015-02-21 01:20:02.844000', "updated_at" = '2015-02-21 01:20:02.851000' WHERE "people"."id" = 18
+  [1m[36mApplicationMetadatum Exists (3.0ms)[0m  [1mSELECT  1 AS one FROM "application_metadata"  WHERE "application_metadata"."person_id" = 18 LIMIT 1[0m
+  [1m[35mApplication Load (30.0ms)[0m  SELECT DISTINCT "applications".* FROM "applications" INNER JOIN "application_token_mappings" ON "application_token_mappings"."application_id" = "applications"."id" INNER JOIN "application_access_tokens" ON "application_access_tokens"."id" = "application_token_mappings"."application_access_token_id" INNER JOIN "application_access_keys" ON "application_access_keys"."token_id" = "application_access_tokens"."id" INNER JOIN "people" ON "people"."id" = "application_access_keys"."person_id" WHERE "people"."id" = 18
+  [1m[36mApplicationBlurb Load (18.0ms)[0m  [1mSELECT "application_blurbs".* FROM "application_blurbs"  WHERE "application_blurbs"."application_id" IN (432, 372, 383, 369, 387, 407, 378, 391, 394, 399, 403, 415, 406, 368, 422, 371, 376, 390, 397, 396, 410, 382, 365, 386, 417, 395, 393, 435, 472, 411, 423, 379, 414, 373, 419, 421, 439, 400, 473, 384, 420, 412, 437, 380, 366, 427, 438, 370, 385, 389, 388, 367, 402, 436, 375, 392, 418, 416, 398, 377, 413, 433, 374, 434, 381, 405)[0m
+  [1m[35mApplicationMetadatum Load (12.0ms)[0m  SELECT "application_metadata".* FROM "application_metadata"  WHERE "application_metadata"."person_id" = 18  ORDER BY "application_metadata"."position" ASC
+  Rendered home_page/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 1028ms (Views: 22.0ms | ActiveRecord: 82.0ms)
+
+
+Started GET "/assets/main.js" for 0:0:0:0:0:0:0:1 at 2015-02-20 20:20:03 -0500
+
+
+Started GET "/" for 0:0:0:0:0:0:0:1 at 2015-02-20 20:50:40 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (uninitialized constant HomePageController):
+  lib/proxy_to_webpack.rb:14:in `call'
+
+
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.0ms)
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_table.html.erb (16.0ms)
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (69.0ms)
+
+
+Started GET "/" for 0:0:0:0:0:0:0:1 at 2015-02-20 20:57:36 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 313ms (Views: 312.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/application.css" for 0:0:0:0:0:0:0:1 at 2015-02-20 20:57:37 -0500
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  puma-2.11.1 (java) lib/puma/server.rb:507:in `handle_request'
+  puma-2.11.1 (java) lib/puma/server.rb:375:in `process_client'
+  puma-2.11.1 (java) lib/puma/server.rb:262:in `run'
+  org/jruby/RubyProc.java:271:in `call'
+  puma-2.11.1 (java) lib/puma/thread_pool.rb:104:in `spawn_thread'
+
+
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb (8.0ms)
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_table.html.erb (14.0ms)
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (64.0ms)
+
+
+Started GET "/javascripts/application.js" for 0:0:0:0:0:0:0:1 at 2015-02-20 20:57:37 -0500
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/application.js"):
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  puma-2.11.1 (java) lib/puma/server.rb:507:in `handle_request'
+  puma-2.11.1 (java) lib/puma/server.rb:375:in `process_client'
+  puma-2.11.1 (java) lib/puma/server.rb:262:in `run'
+  org/jruby/RubyProc.java:271:in `call'
+  puma-2.11.1 (java) lib/puma/thread_pool.rb:104:in `spawn_thread'
+
+
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (12.0ms)
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.0ms)
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.0ms)
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (74.0ms)
+
+
+Started GET "/users/login" for 0:0:0:0:0:0:0:1 at 2015-02-20 20:57:40 -0500
+Processing by Devise::SessionsController#new as HTML
+ActiveRecord::JDBCError: org.postgresql.util.PSQLException: ERROR: relation "users" does not exist
+  Position: 293:         SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+               pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+          FROM pg_attribute a LEFT JOIN pg_attrdef d
+            ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+         WHERE a.attrelid = '"users"'::regclass
+           AND a.attnum > 0 AND NOT a.attisdropped
+         ORDER BY a.attnum
+
+Completed 500 Internal Server Error in 21ms
+
+ActiveRecord::StatementInvalid (ActiveRecord::JDBCError: org.postgresql.util.PSQLException: ERROR: relation "users" does not exist
+  Position: 293:         SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+               pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+          FROM pg_attribute a LEFT JOIN pg_attrdef d
+            ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+         WHERE a.attrelid = '"users"'::regclass
+           AND a.attnum > 0 AND NOT a.attisdropped
+         ORDER BY a.attnum
+):
+  lib/proxy_to_webpack.rb:14:in `call'
+
+
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.0ms)
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (11.0ms)
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.0ms)
+
+
+Started GET "/" for 0:0:0:0:0:0:0:1 at 2015-02-20 21:01:29 -0500
+
+NameError (cannot load Java class org.sqlite.JDBC):
+  org/jruby/javasupport/JavaClass.java:1286:in `for_name'
+  org/jruby/javasupport/JavaUtilities.java:34:in `get_proxy_class'
+  file:/Users/bpurdy/.rvm/rubies/jruby-1.7.16.1/lib/jruby.jar!/jruby/java/core_ext/object.rb:26:in `java_import'
+  org/jruby/RubyArray.java:2412:in `map'
+  file:/Users/bpurdy/.rvm/rubies/jruby-1.7.16.1/lib/jruby.jar!/jruby/java/core_ext/object.rb:22:in `java_import'
+  activerecord-jdbc-adapter (1.3.14) lib/arjdbc/jdbc/driver.rb:24:in `driver_class'
+  org/jruby/RubyModule.java:2337:in `module_eval'
+  activerecord-jdbc-adapter (1.3.14) lib/arjdbc/jdbc/driver.rb:23:in `driver_class'
+  org/jruby/javasupport/JavaObject.java:267:in `synchronized'
+  activerecord-jdbc-adapter (1.3.14) lib/arjdbc/jdbc/driver.rb:20:in `driver_class'
+  activerecord-jdbc-adapter (1.3.14) lib/arjdbc/jdbc/driver.rb:8:in `initialize'
+  activerecord-jdbc-adapter (1.3.14) lib/arjdbc/jdbc/connection.rb:95:in `setup_jdbc_factory'
+  activerecord-jdbc-adapter (1.3.14) lib/arjdbc/jdbc/connection.rb:59:in `setup_connection_factory'
+  activerecord-jdbc-adapter (1.3.14) lib/arjdbc/jdbc/connection.rb:14:in `initialize'
+  activerecord-jdbc-adapter (1.3.14) lib/arjdbc/jdbc/adapter.rb:68:in `initialize'
+  activerecord-jdbc-adapter (1.3.14) lib/arjdbc/jdbc/connection_methods.rb:12:in `jdbc_connection'
+  activerecord-jdbc-adapter (1.3.14) lib/arjdbc/sqlite3/connection_methods.rb:24:in `sqlite3_connection'
+  activerecord (4.1.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:435:in `new_connection'
+  activerecord (4.1.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:445:in `checkout_new_connection'
+  activerecord (4.1.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:416:in `acquire_connection'
+  activerecord (4.1.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:351:in `checkout'
+  /Users/bpurdy/.rvm/rubies/jruby-1.7.16.1/lib/ruby/1.9/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.1.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:350:in `checkout'
+  activerecord (4.1.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:265:in `connection'
+  /Users/bpurdy/.rvm/rubies/jruby-1.7.16.1/lib/ruby/1.9/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.1.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:264:in `connection'
+  activerecord (4.1.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:541:in `retrieve_connection'
+  activerecord (4.1.7) lib/active_record/connection_handling.rb:113:in `retrieve_connection'
+  activerecord (4.1.7) lib/active_record/connection_handling.rb:87:in `connection'
+  activerecord (4.1.7) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/callbacks.rb:29:in `call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.7) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  puma-2.11.1 (java) lib/puma/server.rb:507:in `handle_request'
+  puma-2.11.1 (java) lib/puma/server.rb:375:in `process_client'
+  puma-2.11.1 (java) lib/puma/server.rb:262:in `run'
+  org/jruby/RubyProc.java:271:in `call'
+  puma-2.11.1 (java) lib/puma/thread_pool.rb:104:in `spawn_thread'
+
+
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (35.0ms)
+
+
+Started GET "/" for 0:0:0:0:0:0:0:1 at 2015-02-20 21:01:37 -0500
+
+NameError (cannot load Java class org.sqlite.JDBC):
+  org/jruby/javasupport/JavaClass.java:1286:in `for_name'
+  org/jruby/javasupport/JavaUtilities.java:34:in `get_proxy_class'
+  file:/Users/bpurdy/.rvm/rubies/jruby-1.7.16.1/lib/jruby.jar!/jruby/java/core_ext/object.rb:26:in `java_import'
+  org/jruby/RubyArray.java:2412:in `map'
+  file:/Users/bpurdy/.rvm/rubies/jruby-1.7.16.1/lib/jruby.jar!/jruby/java/core_ext/object.rb:22:in `java_import'
+  activerecord-jdbc-adapter (1.3.14) lib/arjdbc/jdbc/driver.rb:24:in `driver_class'
+  org/jruby/RubyModule.java:2337:in `module_eval'
+  activerecord-jdbc-adapter (1.3.14) lib/arjdbc/jdbc/driver.rb:23:in `driver_class'
+  org/jruby/javasupport/JavaObject.java:267:in `synchronized'
+  activerecord-jdbc-adapter (1.3.14) lib/arjdbc/jdbc/driver.rb:20:in `driver_class'
+  activerecord-jdbc-adapter (1.3.14) lib/arjdbc/jdbc/driver.rb:8:in `initialize'
+  activerecord-jdbc-adapter (1.3.14) lib/arjdbc/jdbc/connection.rb:95:in `setup_jdbc_factory'
+  activerecord-jdbc-adapter (1.3.14) lib/arjdbc/jdbc/connection.rb:59:in `setup_connection_factory'
+  activerecord-jdbc-adapter (1.3.14) lib/arjdbc/jdbc/connection.rb:14:in `initialize'
+  activerecord-jdbc-adapter (1.3.14) lib/arjdbc/jdbc/adapter.rb:68:in `initialize'
+  activerecord-jdbc-adapter (1.3.14) lib/arjdbc/jdbc/connection_methods.rb:12:in `jdbc_connection'
+  activerecord-jdbc-adapter (1.3.14) lib/arjdbc/sqlite3/connection_methods.rb:24:in `sqlite3_connection'
+  activerecord (4.1.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:435:in `new_connection'
+  activerecord (4.1.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:445:in `checkout_new_connection'
+  activerecord (4.1.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:416:in `acquire_connection'
+  activerecord (4.1.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:351:in `checkout'
+  /Users/bpurdy/.rvm/rubies/jruby-1.7.16.1/lib/ruby/1.9/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.1.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:350:in `checkout'
+  activerecord (4.1.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:265:in `connection'
+  /Users/bpurdy/.rvm/rubies/jruby-1.7.16.1/lib/ruby/1.9/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.1.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:264:in `connection'
+  activerecord (4.1.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:541:in `retrieve_connection'
+  activerecord (4.1.7) lib/active_record/connection_handling.rb:113:in `retrieve_connection'
+  activerecord (4.1.7) lib/active_record/connection_handling.rb:87:in `connection'
+  activerecord (4.1.7) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/callbacks.rb:29:in `call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.7) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  puma-2.11.1 (java) lib/puma/server.rb:507:in `handle_request'
+  puma-2.11.1 (java) lib/puma/server.rb:375:in `process_client'
+  puma-2.11.1 (java) lib/puma/server.rb:262:in `run'
+  org/jruby/RubyProc.java:271:in `call'
+  puma-2.11.1 (java) lib/puma/thread_pool.rb:104:in `spawn_thread'
+
+
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.0ms)
+  [1m[36m (3.0ms)[0m  [1mSELECT name FROM sqlite_master WHERE type = 'table' AND name = "schema_migrations"[0m
+  [1m[35m (4.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.0ms)[0m  [1mSELECT name FROM sqlite_master WHERE type = 'table' AND name = "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20150125184402)
+  [1m[36m (0.0ms)[0m  [1mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.0ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150125184402')
+Migrating to AddOmniauthToUsers (20150125220001)
+  [1m[36m (0.0ms)[0m  [1mALTER TABLE "users" ADD "provider" varchar(255)[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "users" ADD "uid" varchar(255)
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20150125220001')[0m
+  [1m[35m (0.0ms)[0m  SELECT name FROM sqlite_master WHERE type = 'table' AND name = "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  SELECT name FROM sqlite_master WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+
+Started GET "/" for 0:0:0:0:0:0:0:1 at 2015-02-20 21:58:45 -0500
+  [1m[36m (5.0ms)[0m  [1mSELECT name FROM sqlite_master WHERE type = 'table' AND name = "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (1.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 309ms (Views: 307.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/application.css" for 0:0:0:0:0:0:0:1 at 2015-02-20 21:58:46 -0500
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  puma-2.11.1 (java) lib/puma/server.rb:507:in `handle_request'
+  puma-2.11.1 (java) lib/puma/server.rb:375:in `process_client'
+  puma-2.11.1 (java) lib/puma/server.rb:262:in `run'
+  org/jruby/RubyProc.java:271:in `call'
+  puma-2.11.1 (java) lib/puma/thread_pool.rb:104:in `spawn_thread'
+
+
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb (8.0ms)
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_table.html.erb (15.0ms)
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (79.0ms)
+
+
+Started GET "/javascripts/application.js" for 0:0:0:0:0:0:0:1 at 2015-02-20 21:58:46 -0500
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/application.js"):
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  puma-2.11.1 (java) lib/puma/server.rb:507:in `handle_request'
+  puma-2.11.1 (java) lib/puma/server.rb:375:in `process_client'
+  puma-2.11.1 (java) lib/puma/server.rb:262:in `run'
+  org/jruby/RubyProc.java:271:in `call'
+  puma-2.11.1 (java) lib/puma/thread_pool.rb:104:in `spawn_thread'
+
+
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.0ms)
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.0ms)
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (42.0ms)
+
+
+Started GET "/users/login" for 0:0:0:0:0:0:0:1 at 2015-02-20 21:58:49 -0500
+Processing by Devise::SessionsController#new as HTML
+  [1m[36m (0.0ms)[0m  [1mSELECT name FROM sqlite_master WHERE type = 'table' AND name = "users"[0m
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (6.0ms)
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (80.0ms)
+Completed 200 OK in 144ms (Views: 106.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/stylesheets/application.css" for 0:0:0:0:0:0:0:1 at 2015-02-20 21:58:49 -0500
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  puma-2.11.1 (java) lib/puma/server.rb:507:in `handle_request'
+  puma-2.11.1 (java) lib/puma/server.rb:375:in `process_client'
+  puma-2.11.1 (java) lib/puma/server.rb:262:in `run'
+  org/jruby/RubyProc.java:271:in `call'
+  puma-2.11.1 (java) lib/puma/thread_pool.rb:104:in `spawn_thread'
+
+
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.0ms)
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.0ms)
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (42.0ms)
+
+
+Started GET "/javascripts/application.js" for 0:0:0:0:0:0:0:1 at 2015-02-20 21:58:49 -0500
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/application.js"):
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  puma-2.11.1 (java) lib/puma/server.rb:507:in `handle_request'
+  puma-2.11.1 (java) lib/puma/server.rb:375:in `process_client'
+  puma-2.11.1 (java) lib/puma/server.rb:262:in `run'
+  org/jruby/RubyProc.java:271:in `call'
+  puma-2.11.1 (java) lib/puma/thread_pool.rb:104:in `spawn_thread'
+
+
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.0ms)
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendered /Users/bpurdy/.rvm/gems/jruby-1.7.16.1/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (27.0ms)
+
+
+Started GET "/users/auth/facebook" for 0:0:0:0:0:0:0:1 at 2015-02-20 21:58:53 -0500
+
+
+Started GET "/users/auth/facebook" for 0:0:0:0:0:0:0:1 at 2015-02-20 21:59:34 -0500
+
+
+Started GET "/users/auth/google_oauth2" for 0:0:0:0:0:0:0:1 at 2015-02-20 21:59:38 -0500

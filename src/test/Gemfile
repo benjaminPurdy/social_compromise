@@ -1,0 +1,23 @@
+source 'https://rubygems.org'
+
+#ruby '1.9.3', :engine => 'jruby', :engine_version => '1.7.10'
+
+gem 'capybara'
+
+gem 'minitest'
+
+gem 'minitest-reporters'
+
+gem 'rake'
+
+gem 'selenium-webdriver'
+
+gem 'site_prism'
+
+gem 'pry'
+
+gem 'rest-client'
+
+gem 'faker'
+
+gem 'require_all'

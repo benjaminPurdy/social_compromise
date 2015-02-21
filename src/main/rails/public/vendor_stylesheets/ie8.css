@@ -1,0 +1,17 @@
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-weight: 600 !important; }
+
+@media (max-width: 694px) {
+
+    .ss-logo {
+        width: 36px;
+        overflow: hidden;
+    }
+
+    .ss-account-controls .ss-user-name,
+    .ss-account-controls .ss-user-logout,
+    .ss-account-controls .fa
+    {
+        font-size: 16px;
+    }
+
+}

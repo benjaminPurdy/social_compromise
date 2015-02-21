@@ -1,0 +1,56 @@
+.pc-modal-container {
+    position: absolute;
+    z-index: 10001;
+}
+
+.pc-modal-content {
+    background: #fff;
+    bottom: 4px;
+    left: 4px;
+    position: absolute;
+    right: 4px;
+    top: 3px;
+
+}
+
+.pc-modal-underlay {
+    background: url(/images/dark-overlay.png) repeat;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10000;
+}
+
+.pc-modal-toolbar {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    /*border-bottom: 1px solid #eaeaea;*/
+
+}
+
+.pc-modal-exit{
+    font-size: 15px;
+    right: 0;
+    padding: 10px 15px;
+    float: right;
+    color: #b2b2b2;
+}
+
+.pc-modal-body {
+    width: 75%;
+}
+
+.pc-modal-content .ss-card {
+    overflow-y: auto;
+}
+
+
+
+
+
+
+

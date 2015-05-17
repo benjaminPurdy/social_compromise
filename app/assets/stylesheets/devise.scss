@@ -6,7 +6,7 @@
     color: #DF4A32;
   }
 }
-.login-page, .signup-page{
+.login-page, .signup-page, .forgot-password-page{
   position:relative;
   margin: 10px auto;
   width: 500px;
@@ -76,7 +76,7 @@
 .social-login a:last-child{
   background-color: #DF4A32;
 }
-.email-login,.email-signup{
+.email-login,.email-signup, .forgot-password-form {
   position:relative;
   float: left;
   width: 100%;

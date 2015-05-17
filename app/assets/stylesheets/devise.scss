@@ -1,8 +1,16 @@
+#error_explanation{
+  position:relative;
+  margin: 10px auto;
+  width: 500px;
+  ul li {
+    color: #DF4A32;
+  }
+}
 .login-page, .signup-page{
   position:relative;
   margin: 10px auto;
   width: 500px;
-  height: 380px;
+  height: 400px;
   background-color: #fff;
   padding: 10px;
   border-radius: 3px;
@@ -97,7 +105,7 @@
 .u-form-group input:focus{
   border-color: #358efb;
 }
-.u-form-group button, .u-form-group input[type="submit"]{
+.u-form-group button{
   width:50%;
   background-color: #1CB94E;
   border: none;
@@ -108,6 +116,34 @@
   padding: 14px 0;
   border-radius: 2px;
   text-transform: uppercase;
+}
+
+.form-controls {
+  input[type="submit"] {
+    border: none;
+    outline: none;
+    color: #fff;
+    width: 40%;
+    background-color: #1CB94E;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 14px 0;
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+  .cancel-form{
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 14px 0;
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+}
+
+input[type="cancel"] {
+  width:25%;
 }
 .forgot-password{
   width:50%;

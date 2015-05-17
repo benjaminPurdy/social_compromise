@@ -1,3 +1,4 @@
+<%= devise_error_messages! %>
 <div class="signup-page">
     <div class="lb-header">
         <a href=<%=new_session_path(resource_name)%> id="login-box-link">Login</a>
@@ -9,15 +10,11 @@
     </div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "email-signup"}) do |f| %>
-  <%= devise_error_messages! %>
 
   <div class="u-form-group">
     <input placeholder="Email" type="email" value="" name="user[email]" id="user_email">
   </div>
 
-  <% if @validatable %>
-  <em>(<%= @minimum_password_length %> characters minimum)</em>
-  <% end %><br />
   <div class="u-form-group">
     <input placeholder="Password" type="password" name="user[password]" id="user_password">
   </div>
@@ -26,10 +23,9 @@
     <input placeholder="Confirm Password" type="password" name="user[password_confirmation]" id="user_password_confirmation">
   </div>
 
-  <div class="actions">
-    <div class="u-form-group">
-      <%= f.submit "Log in" %>
-    </div>
+  <div class="form-controls">
+    <%= f.submit "Log in" %>
+    <a class='cancel-form' href="/"> Cancel </a>
   </div>
 
   <div class="u-form-group">

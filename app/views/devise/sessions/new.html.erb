@@ -26,10 +26,9 @@
       </div>
     <% end -%>
 
-    <div class="actions">
-        <div class="u-form-group">
-            <%= f.submit "Log in" %>
-        </div>
+    <div class="form-controls">
+        <%= f.submit "Log in" %>
+        <a class='cancel-form' href="/"> Cancel </a>
     </div>
     <div class="u-form-group">
         <a href=<%=new_password_path(resource_name)%> class="forgot-password">Forgot password?</a>

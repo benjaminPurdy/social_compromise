@@ -1,10 +1,11 @@
 <div class="login-page">
     <div class="lb-header">
-        <a href="#" class="active" id="login-box-link">Login</a>
-        <a href="#" id="signup-box-link">Sign Up</a>
+        <a href=<%=new_session_path(resource_name)%> class="active" id="login-box-link">Login</a>
+        <a href=<%=new_registration_path(resource_name)%> id="signup-box-link">Sign Up</a>
     </div>
     <div class="social-login">
-        <%= render "devise/shared/links" %>
+        <%= link_to "Sign in with Facebook", omniauth_authorize_path(resource_name, "facebook") %>
+        <%= link_to "Sign in with Google", omniauth_authorize_path(resource_name, "google_oauth2") %>
     </div>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "email-login"}) do |f| %>
@@ -20,8 +21,8 @@
 
     <% if devise_mapping.rememberable? -%>
       <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
+        <input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me">
+        <%= f.label :remember_me%>
       </div>
     <% end -%>
 
@@ -30,6 +31,8 @@
             <%= f.submit "Log in" %>
         </div>
     </div>
+    <div class="u-form-group">
+        <a href=<%=new_password_path(resource_name)%> class="forgot-password">Forgot password?</a>
+    </div>
   <% end %>
-
 </div>

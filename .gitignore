@@ -3,3 +3,7 @@
 *.iml
 *.iws
 tmp/
+.bundle
+db/development.sqlite3
+log/*.log
+

@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  include Amistad::FriendModel
+
   #validates_presence_of :username
   #validates_uniqueness_of :username
 
@@ -27,6 +29,10 @@ class User < ActiveRecord::Base
      else
        super
      end
+  end
+
+  def display_name
+    email.split
   end
 
   def password_required?

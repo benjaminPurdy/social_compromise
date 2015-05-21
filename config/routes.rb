@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   namespace :settings do
     get 'profile' => 'profile#index'
     post 'profile' => 'profile#save'
+    get 'friends' => 'friends#index'
   end
 
   resources :friends, :controller => 'friendships', :except => [:show, :edit] do

@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
   end
 
   def display_name
-    email.split
+    email.split('@')[0]
   end
 
   def password_required?

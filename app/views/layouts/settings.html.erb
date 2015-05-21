@@ -8,14 +8,19 @@
 </head>
 <body>
 
-<div id="user_nav">
-    <% if user_signed_in? %>
-      Signed in as <%= current_user.email %>. Not you?
-      <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-    <% else %>
-      <%= link_to "Sign up", new_user_registration_path %> |
-      <%= link_to "sign in", new_user_session_path %>
-    <% end %>
+<div class="header">
+    <div class="logo">
+
+    </div>
+    <div class="user-nav">
+        <% if user_signed_in? %>
+          Signed in as <%= current_user.display_name %>. Not you?
+          <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+        <% else %>
+          <%= link_to "Sign up", new_user_registration_path %> |
+          <%= link_to "Sign in", new_user_session_path %>
+        <% end %>
+    </div>
 </div>
 
 <% flash.each do |name, msg| %>
@@ -24,9 +29,9 @@
 
 <div class="settings-nav">
     <ul>
-        <li id="profile" class="active"><a href="/settings/profile">Profile</a></li>
-        <li id="friends"><a href="/settings/friends">Friends</a></li>
-        <li id="favorites"><a href="settings/favorites">Favorites</a></li>
+        <li class="profile" class="active"><a href="/settings/profile">Profile</a></li>
+        <li class="friends"><a href="/settings/friends">Friends</a></li>
+        <li class="favorites"><a href="settings/favorites">Favorites</a></li>
     </ul>
 </div>
 <div class="settings-page">

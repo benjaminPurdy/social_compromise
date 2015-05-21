@@ -1,0 +1,17 @@
+.header {
+  height: 33px;
+  background-color: green;
+  width: 100%;
+  .user-nav {
+    background-color: red;
+    float: right;
+    height: 100%;
+
+  }
+  .logo {
+    float: left;
+    background-color: blue;
+    height: 100%;
+    width: 100px;
+  }
+}

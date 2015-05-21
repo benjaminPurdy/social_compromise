@@ -1,24 +1,26 @@
-<form action='/settings/profile' class="demo">
-  <div class="u-form-group">
-    <label>Email: </label>
-    <input placeholder="Email" type="email" value="<%= current_user.email %>" name="user[email]" id="user_email">
+<form action='/settings/profile' class="profile-form">
+  <div class="u-form-group first-name">
+    <input placeholder="FIRST NAME" value="<%= current_user.name %>" name="user[name]" id="user_name">
+  </div>
+  <div class="u-form-group last-name">
+    <input placeholder="LAST NAME" value="<%= current_user.name %>" name="user[name]" id="user_name">
   </div>
   <div class="u-form-group">
-    <label>Name: </label>
-    <input placeholder="Name" value="<%= current_user.name %>" name="user[name]" id="user_name">
+    <input placeholder="NAME@EXAMPLE.COM" type="email" value="<%= current_user.email %>" name="user[email]" id="user_email">
   </div>
-  <label>Age: </label>
-  <select id="age">
-    <% for i in 13..75 do %>
-      <option><%= i %></option>
-    <% end %>
-  </select>
   <div class="u-form-group">
-    <label>About Me: </label>
-    <textarea placeholder="About Me" value="<%= current_user.bio %>" name="user[bio]" id="user_bio"></textarea>
+    <label>Age: </label>
+    <select id="age">
+      <% for i in 13..75 do %>
+        <option><%= i %></option>
+      <% end %>
+    </select>
+  </div>
+  <div class="u-form-group">
+    <textarea placeholder="ABOUT ME" value="<%= current_user.bio %>" name="user[bio]" id="user_bio"></textarea>
   </div>
   <div class="form-controls">
-    <input type="submit" name="commit" value="Save">
+    <input class="submit" type="submit" name="commit" value="Save">
     <a class='cancel-form' href="/"> Cancel </a>
   </div>
 </form>

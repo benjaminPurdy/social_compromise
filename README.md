@@ -4,3 +4,6 @@ https://console.developers.google.com/project/master-legacy-838/apiui/credential
 and
 https://developers.facebook.com/apps/1029155713780489/dashboard/
 up into your bashrc as the correct variables. Source that and get it going.
+Also, make sure that you create the amistad tables via:
+rails generate amistad:install
+

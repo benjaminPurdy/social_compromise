@@ -1,1 +1,79 @@
-<h1>Homepage index</h1>
+		<div id="home" class="header scroll">
+			<div class="container">
+				<div class="clearfix"> </div>
+				<div class="slide-text text-center">
+					<h1>Social Compromise</h1>
+					<span>Enjoy life together</span>
+          <% if user_signed_in? %>
+            <a class="slide-btn" href="/compromise/new">Start a compromise</a>
+          <% else %>
+            <a class="slide-btn" href="/users/login">Start a compromise</a>
+          <% end %>
+				</div>
+			</div>
+		</div>
+		<div id="fea" class="features">
+			<div class="container">
+				<div class="head text-center">
+					<h3><span> </span> Our Features</h3>
+				</div>
+				<!---- start-features-grids---->
+				<div class="features-grids text-center">
+					<div class="col-md-3 features-grid">
+						<span class="fea-icon1"><i class="fa fa-star"> </i> </span>
+						<h3><a href="#">Movie Database</a></h3>
+						<p>We have gathered a large database of movies and provide a link going to a popular streaming sight for them</p>
+					</div>
+					<div class="col-md-3 features-grid">
+						<span class="fea-icon1"><i class="fa fa-thumbs-up"> </i> </span>
+						<h3><a href="#">Recomendations</a></h3>
+						<p>Based on the groups ratings we offer suggestions that every member in the group will enjoy</p>
+					</div>
+					<div class="col-md-3 features-grid">
+						<span class="fea-icon1"><i class="fa fa-tachometer"> </i> </span>
+						<h3><a href="#">Things and stuff</a></h3>
+						<p>So many things! Thats not even counting all the stuff</p>
+					</div>
+					<div class="col-md-3 features-grid">
+						<span class="fea-icon1"><i class="fa fa-mobile"> </i> </span>
+						<h3><a href="#">No clue</a></h3>
+						<p>You have as good idea as what this is as me</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="work">
+			<div class="container">
+				<div class="head text-center work-head">
+					<h3><span> </span> How We Work</h3>
+					<p>Using open API's we provide fast, reliable group suggestions</p>
+				</div>
+				<div class="work-grids">
+					<div class="col-md-4 work-grid">
+						<span class="col-md-5 w-icon"> <i class="fa fa-search"> </i></span>
+						<div class="col-md-7 work-info">
+							<h4>Movie Database</h4>
+							<p>Using popular open API's such as <a href="rottentomato.com">Rotten Tomato</a> we have accumulated a vast database of movies</p>
+						</div>
+					</div>
+					<div class="col-md-4 work-grid center-work-grid">
+						<span class="col-md-5 w-icon"> <i class="fa fa-cogs"> </i></span>
+						<div class="col-md-7 work-info">
+							<h4>Recomendations</h4>
+							<p>Using both the communities rating of movies, your previous up/down votes of movies, and the previous votes of all the members in the group we suggest the best fit movies for your enjoyment</p>
+						</div>
+					</div>
+					<div class="col-md-4 work-grid">
+						<span class="col-md-5 w-icon"><i class="fa fa-code"> </i> </span>
+						<div class="col-md-7 work-info">
+							<h4>Viewing Enjoyment</h4>
+							<p>If the movie is being streamed in one of the popular streaming services such as <strong>Netflixs</strong> then a link is provided along side the movies description as well as a counter for everyone to get ready and see</p>
+						</div>
+					</div>
+            <div class="work-map">
+                <span> </span>
+            </div>
+			</div>
+		</div>
+  </div>
+

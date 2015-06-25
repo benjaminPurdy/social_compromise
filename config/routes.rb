@@ -6,10 +6,15 @@ Rails.application.routes.draw do
   end
 
   namespace :settings do
+    get '/' => 'profile#index'
     get 'profile' => 'profile#index'
     post 'profile' => 'profile#save'
     get 'friends' => 'friends#index'
   end
+
+  get '/compromise/new' => 'compromise#new'
+  post '/compromise/create' => 'compromise#create'
+  get '/compromise/index' => 'compromise#index'
 
   resources :friends, :controller => 'friendships', :except => [:show, :edit] do
     get "requests", :on => :collection

@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
+  before_save :auto_set_display_name
 
   include Amistad::FriendModel
 
@@ -32,12 +33,11 @@ class User < ActiveRecord::Base
      end
   end
 
-  def display_name
-    email.split('@')[0]
+  def auto_set_display_name
+    self.display_name = email.split('@')[0]
   end
 
   def password_required?
     super && provider.blank?
   end
-
 end

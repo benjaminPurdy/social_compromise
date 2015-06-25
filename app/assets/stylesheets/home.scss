@@ -1,3 +1,216 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.header {
+  background-image: url(/assets/header-bg.jpg);
+  background-size: 100% 100%;
+  min-height: 700px;
+}
+
+.slide-text {
+  margin-top: 10em;
+  h1 {
+    color: #394346;
+    font-family: 'Droid Serif', serif;
+    font-size: 3.2em;
+    font-weight: 700;
+  }
+  span {
+    color: #394346;
+    font-size: 2em;
+    display: block;
+  }
+}
+
+.slide-btn {
+  color: #fff;
+  background: #FD3B01;
+  font-size: 1.2em;
+  padding: 0.7em 1.8em;
+  display: inline-block;
+  border-radius: 0.3em;
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+  -o-border-radius: 0.3em;
+  margin-top: 0.5em;
+  &:hover {
+    background: #394346;
+    color: #FFF;
+    text-decoration: none;
+  }
+}
+
+/*------start-features-----*/
+
+.features {
+  padding: 5em 0;
+}
+
+.head {
+  h3 {
+    color: #394346;
+    font-size: 2em;
+    font-family: 'Droid Serif', serif;
+    font-weight: 700;
+    margin: 0 0 0.5em 0;
+  }
+  p {
+    color: #8E999C;
+    margin: 0 auto;
+    width: 64%;
+    font-size: 1em;
+    line-height: 1.5em;
+  }
+  h3 span {
+    width: 12px;
+    height: 20px;
+    display: inline-block;
+    background-image: url(/assets/arrow-icon.png);
+  }
+}
+
+.features-grid {
+  span {
+    height: 140px;
+    width: 140px;
+    display: inline-block;
+    background: #F3F3F3;
+    border: 10px solid #EBEBEB;
+    border-radius: 30em;
+    -webkit-border-radius: 30em;
+    -moz-border-radius: 30em;
+    -o-border-radius: 30em;
+    -ms-border-radius: 30em;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    i {
+      font-size: 3em;
+      color: #FD3B01;
+      margin-top: 0.8em;
+      transition: 0.5s all;
+      -webkit-transition: 0.5s all;
+      -moz-transition: 0.5s all;
+      -o-transition: 0.5s all;
+      -ms-transition: 0.5s all;
+    }
+  }
+  h3 a {
+    color: #8E999C;
+    font-size: 1.1em;
+    font-weight: 600;
+    &:hover {
+      text-decoration: none;
+      color: #8E999C;
+    }
+  }
+  p {
+    color: #8E999C;
+    font-size: 1em;
+    line-height: 1.5em;
+  }
+  &:hover {
+    span {
+      background: #FD3B01;
+      border-color: #FFDCD1;
+    }
+    i {
+      color: #FFF;
+    }
+  }
+}
+
+.features-grids {
+  padding: 4em 0 0em;
+}
+
+/*---- start-work----*/
+
+.work-map{
+  width: 757px;
+  height: 237px;
+  background-image: url(/assets/work-map.png);
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  left:10%;
+}
+
+.work {
+  background: #4F4F57;
+  padding: 5em 0;
+}
+
+.work-head {
+  h3, p {
+    color: #FFF;
+  }
+}
+
+.work-grid span {
+  width: 140px;
+  height: 140px;
+  display: inline-block;
+  background: #91919D;
+  border: 6px solid #494951;
+  border-radius: 30em;
+  -webkit-border-radius: 30em;
+  -moz-border-radius: 30em;
+  -o-border-radius: 30em;
+  -ms-border-radius: 30em;
+  z-index: 999;
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  -ms-transition: 0.5s all;
+}
+
+.w-icon {
+  text-align: center;
+  i {
+    color: #FFF;
+    font-size: 2.2em;
+    margin-top: 1.4em;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+  }
+}
+
+.work-info {
+  h4 {
+    color: #FFF;
+    font-weight: 600;
+    font-size: 1.6em;
+  }
+  p {
+    color: #FFF;
+    font-size: 0.875em;
+  }
+}
+
+.work-grids {
+  margin-top: 4em;
+}
+
+.center-work-grid {
+  margin-top: 8em;
+}
+
+.work-grids {
+  position: relative;
+}
+
+.work-grid:hover {
+  span {
+    background: #F3F3F3;
+    border-color: #EBEBEB;
+  }
+  .w-icon i {
+    color: #FD3B01;
+  }
+}

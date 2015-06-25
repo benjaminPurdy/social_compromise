@@ -4,8 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
-#gem 'sqlite3'
-gem 'activerecord-jdbcsqlite3-adapter'
+gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -16,7 +15,9 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'whenever'
 
+gem 'twitter-bootstrap-rails'
 gem 'amistad'
+gem 'pg'
 
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'

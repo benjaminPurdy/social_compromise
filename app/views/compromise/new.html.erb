@@ -1,0 +1,29 @@
+<div class="new-compromise">
+  <div class="container">
+    <div class="clearfix"> </div>
+    <div class="slide-text text-center">
+      <h1>Create a new Negotiation</h1>
+      <label>Tell the participants a little bit about this event</label>
+    </div>
+    <%= form_tag('/compromise/create', method: 'post', class: "new-compromise-form") do %>
+      <div class="form-group">
+        <input type="text" class="form-control" name="title" placeholder="TITLE"/>
+      </div>
+      <div class="form-group">
+        <textarea type="text" class="form-control" rows="5" name="description" placeholder="ADD A DESCRIPTION"> </textarea>
+      </div>
+      <label>Select the people you wish to be a part of this event</label>
+      <% if @friends.size == 0 %>
+          <label>Currently you have no friends added. Search for people you may know and add them to your social network!</label>
+      <% else %>
+        <% @friends.each do |friend| %>
+            <div class="checkbox">
+                <label><input type="checkbox" name="members[<%= friend.display_name %>]" value=""><%= friend.display_name %></label>
+            </div>
+            <input class="btn btn-primary" type="submit" value="Submit">
+            <a class="cancel" href="/">Cancel</a>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

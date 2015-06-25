@@ -1,26 +1,26 @@
-<form action='/settings/profile' class="profile-form">
-  <div class="u-form-group first-name">
-    <input placeholder="FIRST NAME" value="<%= current_user.name %>" name="user[name]" id="user_name">
-  </div>
-  <div class="u-form-group last-name">
-    <input placeholder="LAST NAME" value="<%= current_user.name %>" name="user[name]" id="user_name">
-  </div>
-  <div class="u-form-group">
-    <input placeholder="NAME@EXAMPLE.COM" type="email" value="<%= current_user.email %>" name="user[email]" id="user_email">
-  </div>
-  <div class="u-form-group">
-    <label>Age: </label>
-    <select id="age">
-      <% for i in 13..75 do %>
-        <option><%= i %></option>
-      <% end %>
-    </select>
-  </div>
-  <div class="u-form-group">
-    <textarea placeholder="ABOUT ME" value="<%= current_user.bio %>" name="user[bio]" id="user_bio"></textarea>
-  </div>
-  <div class="form-controls">
-    <input class="submit" type="submit" name="commit" value="Save">
-    <a class='cancel-form' href="/"> Cancel </a>
-  </div>
-</form>
+<%= form_tag('/settings/profile', method: 'post', class: 'profile-form') do %>
+    <div class="u-form-group first-name">
+      <input placeholder="FIRST NAME" value="<%= current_user.first_name %>" name="user[first_name]" id="user_name">
+    </div>
+    <div class="u-form-group last-name">
+      <input placeholder="LAST NAME" value="<%= current_user.last_name %>" name="user[last_name]" id="user_name">
+    </div>
+    <div class="u-form-group">
+      <input placeholder="NAME@EXAMPLE.COM" type="email" value="<%= current_user.email %>" name="user[email]" id="user_email">
+    </div>
+    <div class="u-form-group">
+      <label>Age: </label>
+      <select id="age" name="user[age]">
+        <% for i in 13..75 do %>
+          <option><%= i %></option>
+        <% end %>
+      </select>
+    </div>
+    <div class="u-form-group">
+      <textarea placeholder="ABOUT ME" name="user[bio]" id="user_bio"><%= current_user.bio %></textarea>
+    </div>
+    <div class="form-controls">
+      <input class="submit" type="submit" name="commit" value="Save">
+      <a class='cancel-form' href="/"> Cancel </a>
+    </div>
+<% end %>

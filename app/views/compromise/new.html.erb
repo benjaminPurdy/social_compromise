@@ -14,16 +14,18 @@
       </div>
       <label>Select the people you wish to be a part of this event</label>
       <% if @friends.size == 0 %>
+          <br>
           <label>Currently you have no friends added. Search for people you may know and add them to your social network!</label>
+          <br>
       <% else %>
         <% @friends.each do |friend| %>
             <div class="checkbox">
                 <label><input type="checkbox" name="members[<%= friend.display_name %>]" value=""><%= friend.display_name %></label>
             </div>
-            <input class="btn btn-primary" type="submit" value="Submit">
-            <a class="cancel" href="/">Cancel</a>
         <% end %>
       <% end %>
+      <input class="btn btn-primary" type="submit" value="Submit">
+      <a class="cancel" href="/">Cancel</a>
     <% end %>
   </div>
 </div>

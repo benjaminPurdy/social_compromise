@@ -1,2 +1,77 @@
-<%= @compromise.inspect %>
-<%= @participant.inspect %>
+<div class="compromise">
+  <h2><%= @compromise.title %></h2>
+  <label>Description: </label><p><%= @compromise.description %></p>
+  <div class="container">
+      <label>Participants</label>
+      <div class="row">
+          <div class="col-lg-6">
+              <% @participants[0...@participants.size/2 + 1].each do |participant| %>
+                <span><%=participant.display_name%></span>
+                <% if participant == @owner%>
+                  <span><strong>owner</strong></span>
+                <% end %>
+              <% end %>
+          </div>
+          <div class="col-lg-6">
+            <% @participants[1 - @participants.size/2...@participants.size].each do |participant| %>
+              <span><%=participant.display_name%></span>
+              <% if participant == @owner%>
+                <span><strong>owner</strong></span>
+              <% end %>
+            <% end %>
+          </div>
+      </div>
+      <div class="movie-options">
+          <label>Cast your vote on the movies below</label>
+          <div class="container sm-media">
+              <div class="row">
+                  <div class="col-xs-18 col-sm-6 col-md-3">
+                      <div class="thumbnail center">
+                          <img src="http://placehold.it/600x400/EEE">
+                          <div class="caption">
+                              <h4>Thumbnail label</h4>
+                              <p>Lorem ipsum dolor sit amet maximus. </p>
+                              <a href="#" class="btn btn-primary btn-sm" role="button"><i class="glyphicon glyphicon-cart"></i> More Info</a>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col-xs-18 col-sm-6 col-md-3">
+                      <div class="thumbnail center">
+                          <img src="http://placehold.it/600x400/EEE">
+                          <div class="caption">
+                              <h4>Thumbnail label</h4>
+                              <p>Lorem ipsum dolor sit amet maximus. </p>
+                              <a href="#" class="btn btn-primary btn-sm" role="button"><i class="glyphicon glyphicon-cart"></i> More Info</a>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col-xs-18 col-sm-6 col-md-3">
+                      <div class="thumbnail center">
+                          <img src="http://placehold.it/600x400/EEE">
+                          <div class="caption clearfix">
+                              <h4>Thumbnail label</h4>
+                              <p>Lorem ipsum dolor sit amet maximus. </p>
+                              <a href="#" class="btn btn-primary btn-sm" role="button"><i class="glyphicon glyphicon-cart"></i> More Info</a>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col-xs-18 col-sm-6 col-md-3">
+                      <div class="thumbnail center">
+                          <img src="http://placehold.it/600x400/EEE">
+                          <div class="caption">
+                              <h4>Thumbnail label</h4>
+                              <p>Lorem ipsum dolor sit amet maximus. </p>
+                              <a href="#" class="btn btn-primary btn-sm" role="button"><i class="glyphicon glyphicon-cart"></i> More Info</a>
+                          </div>
+                      </div>
+                  </div>
+
+              </div><!--/row-->
+          </div><!--/container -->
+      </div>
+
+  </div>
+<div>

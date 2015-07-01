@@ -1,4 +1,5 @@
 class CompromiseController < ApplicationController
+  include SuggestionHelper
   def new
     @friends = current_user.friends
   end
@@ -27,6 +28,7 @@ class CompromiseController < ApplicationController
         @owner = user
       end
     end
+    @movie_suggestions = suggestions(:movie, suggestion_config.count)
   end
 
   def movie_vote
@@ -39,5 +41,10 @@ class CompromiseController < ApplicationController
 
   def save
 
+  end
+
+  private
+  def suggestion_config
+    @social_compromise ||= Rails.application.config.social_compromise["suggestion"]
   end
 end

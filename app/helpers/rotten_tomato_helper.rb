@@ -5,7 +5,7 @@ module RottenTomatoHelper
   def populate_movies
     movies.each do |movie|
       new_movie = populate_movie(movie)
-      populate_cast(movie['abridged_cast'], new_movie.id)
+      #populate_cast(movie['abridged_cast'], new_movie.id)
     end
   end
 
@@ -28,17 +28,17 @@ module RottenTomatoHelper
     new_movie = Movie.find_by_title_and_release_date(title, release_date)
     return new_movie if new_movie != nil
 
-    Movie.create(title: title, mpaa_rating: movie['mpaa_rating'], runtime: movie['runtime'], release_date: release_date, critics_score: movie['ratings']['critics_score'], audience_score: movie['ratings']['audience_score'], synopsis: movie['synopsis'], thumbnail: movie['posters']['thumbnail'], similar_movies: movie['similar'], clips: movie['clips'])
+    Movie.create(title: title, mpaa_rating: movie['mpaa_rating'], runtime: movie['runtime'], release_date: release_date, critics_score: movie['ratings']['critics_score'], audience_score: movie['ratings']['audience_score'], synopsis: movie['synopsis'], thumbnail: movie['posters']['thumbnail'], similar_movies: movie['similar'])
   end
 
-  def populate_cast(cast, movie_id)
-    cast.each do |actor|
-      actor = Actor.find_or_create_by!(name: actor['name'])
-      characters = actor['characters'] || []
-      characters.each do |character|
-        Character.find_or_create_by!(name: character, actor_id: actor.id, movie_id: movie_id)
-      end
-      ActorMovieMapping.find_or_create_by!(movie_id: movie_id, actor_id: actor.id)
-    end
-  end
+  # def populate_cast(cast, movie_id)
+  #   cast.each do |actor|
+  #     actor = Actor.find_or_create_by!(name: actor['name'])
+  #     characters = actor['characters'] || []
+  #     characters.each do |character|
+  #       Character.find_or_create_by!(name: character, actor_id: actor.id, movie_id: movie_id)
+  #     end
+  #     ActorMovieMapping.find_or_create_by!(movie_id: movie_id, actor_id: actor.id)
+  #   end
+  # end
 end

@@ -9,10 +9,21 @@ class CompromiseController < ApplicationController
 
     CompromiseUserMapping.create!(user_id: current_user.id, compromise_id: compromise.id, owner: true)
     members = params[:members] || []
+    users = []
     members.each do |key, value|
       user = User.find_by_display_name(key)
       CompromiseUserMapping.create!(user_id: user.id, compromise_id: compromise.id)
+      users.push(user)
     end
+    Thread.new do
+      puts "getting here!"
+      notification = Notification.create!(link: '/compromise/index?compromise=' + compromise.id.to_s, thumbnail: '', description: compromise.description)
+      users.each do |user|
+        NotificationUserMapping.create!(user_id: user.id, notification_id: notification.id)
+      end
+      ActiveRecord::Base.connection.close
+    end
+
     redirect_to :controller => 'compromise', :action => 'index', :compromise => compromise.id
   end
 

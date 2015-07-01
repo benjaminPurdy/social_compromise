@@ -1,3 +1,4 @@
+#class Settings::ProfileController < ApplicationController
 class Settings::ProfileController < Settings::BaseController
   def index
 

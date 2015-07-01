@@ -8,36 +8,7 @@
 </head>
 <body>
 
-<div class="user-header">
-  <div class="box">
-    <div class="search">
-      <span class="icon"><i class="fa fa-search"></i></span>
-      <input type="search" id="search" placeholder="Search..." />
-    </div>
-  </div>
-
-  <div class="user-nav pull-right">
-    <% if user_signed_in? %>
-      <ul class="profile-wrapper">
-        <li>
-        <!-- user profile -->
-          <div class="profile">
-            <img src="https://secure.gravatar.com/avatar/2f05a5d3273d54e90f1ad6dca5eb97bc?s=47" />
-            <!-- more menu -->
-            <ul class="menu">
-              <a href="#"><li>Edit</li></a>
-              <a href="#"><li>Change Password</li></a>
-              <a rel="nofollow" data-method="delete" href="/users/logout"><li>Sign out</li></a>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    <% else %>
-      <%= link_to "Sign up", new_user_registration_path %> |
-      <%= link_to "Sign in", new_user_session_path %>
-    <% end %>
-  </div>
-</div>
+<%= render partial: '/layouts/header'%>
 
 <!--
 <% flash.each do |name, msg| %>

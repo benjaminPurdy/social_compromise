@@ -3,6 +3,11 @@ class User < ActiveRecord::Base
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  has_many :compromise_user_mapping
+  has_many :notification_user_mapping
+  has_many :compromises, :through => :compromise_user_mapping
+  has_many :notifications, :through => :notification_user_mapping
+
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
   before_save :auto_set_display_name
@@ -31,6 +36,15 @@ class User < ActiveRecord::Base
      else
        super
      end
+  end
+
+  def has_unread_notifications?
+#    @has_unread_messages ||= begin
+      if NotificationUserMapping.find_by_user_id_and_viewed(self.id, false) != nil
+        return true
+      end
+      return false
+#    end
   end
 
   def auto_set_display_name

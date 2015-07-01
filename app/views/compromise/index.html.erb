@@ -26,7 +26,9 @@
           <div class="container sm-media">
               <div class="row">
                   <% @movie_suggestions.each do |movie| %>
-                    <%= render partial: 'movie_media_box', locals: { movie: movie} %>
+                    <div id=movie-<%=movie.id%> class="col-xs-18 col-sm-6 col-md-3">
+                      <%= render partial: 'movie_media_box', locals: { movie: movie} %>
+                    </div>
                 <% end %>
 
               </div><!--/row-->

@@ -32,7 +32,7 @@ class CompromiseController < ApplicationController
   end
 
   def movie_vote
-    puts params.inspect
+    @previous_id = params["id"]
     @new_suggestion = Movie.last
     respond_to do |format|
       format.js

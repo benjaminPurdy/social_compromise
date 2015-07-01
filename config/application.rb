@@ -23,7 +23,6 @@ module SocialCompromise
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
-    #config.social_compromise = YAML.load_file('/Users/benjaminpurdy/Desktop/projects/social_compromise/config/social_compromise_config.yml')
     config.social_compromise = YAML.load_file(Rails.root.join('config', 'social_compromise_config.yml'))
   end
 end

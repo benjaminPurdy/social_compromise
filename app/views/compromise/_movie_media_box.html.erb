@@ -1,0 +1,11 @@
+<div id="testing" class="col-xs-18 col-sm-6 col-md-3">
+    <div class="thumbnail center">
+        <img src=<%= movie.thumbnail %>>
+        <div class="caption">
+            <h4><%= movie.title %></h4>
+            <p><%= movie.synopsis %></p>
+            <%= link_to "yay", {:controller => "compromise", :action => "movie_vote"}, :class => "btn btn-primary btn-sm", :remote => true%>
+            <%= link_to "nay", {:controller => "compromise", :action => "movie_vote"}, :class => "btn btn-primary btn-sm", :remote => true%>
+        </div>
+    </div>
+</div>

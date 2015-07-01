@@ -25,49 +25,9 @@
           <label>Cast your vote on the movies below</label>
           <div class="container sm-media">
               <div class="row">
-                  <div class="col-xs-18 col-sm-6 col-md-3">
-                      <div class="thumbnail center">
-                          <img src="http://placehold.it/600x400/EEE">
-                          <div class="caption">
-                              <h4>Thumbnail label</h4>
-                              <p>Lorem ipsum dolor sit amet maximus. </p>
-                              <a href="#" class="btn btn-primary btn-sm" role="button"><i class="glyphicon glyphicon-cart"></i> More Info</a>
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="col-xs-18 col-sm-6 col-md-3">
-                      <div class="thumbnail center">
-                          <img src="http://placehold.it/600x400/EEE">
-                          <div class="caption">
-                              <h4>Thumbnail label</h4>
-                              <p>Lorem ipsum dolor sit amet maximus. </p>
-                              <a href="#" class="btn btn-primary btn-sm" role="button"><i class="glyphicon glyphicon-cart"></i> More Info</a>
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="col-xs-18 col-sm-6 col-md-3">
-                      <div class="thumbnail center">
-                          <img src="http://placehold.it/600x400/EEE">
-                          <div class="caption clearfix">
-                              <h4>Thumbnail label</h4>
-                              <p>Lorem ipsum dolor sit amet maximus. </p>
-                              <a href="#" class="btn btn-primary btn-sm" role="button"><i class="glyphicon glyphicon-cart"></i> More Info</a>
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="col-xs-18 col-sm-6 col-md-3">
-                      <div class="thumbnail center">
-                          <img src="http://placehold.it/600x400/EEE">
-                          <div class="caption">
-                              <h4>Thumbnail label</h4>
-                              <p>Lorem ipsum dolor sit amet maximus. </p>
-                              <a href="#" class="btn btn-primary btn-sm" role="button"><i class="glyphicon glyphicon-cart"></i> More Info</a>
-                          </div>
-                      </div>
-                  </div>
+                  <% @movie_suggestions.each do |movie| %>
+                    <%= render partial: 'movie_media_box', locals: { movie: movie} %>
+                <% end %>
 
               </div><!--/row-->
           </div><!--/container -->

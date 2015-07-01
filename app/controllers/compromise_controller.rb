@@ -28,11 +28,15 @@ class CompromiseController < ApplicationController
         @owner = user
       end
     end
-    @movie_suggestions = suggestions(:movie, suggestion_config.count)
+    @movie_suggestions = suggestions(:movie, suggestion_config["count"])
   end
 
   def movie_vote
-
+    puts params.inspect
+    @new_suggestion = Movie.last
+    respond_to do |format|
+      format.js
+    end
   end
 
   def edit

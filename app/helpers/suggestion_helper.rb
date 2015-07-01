@@ -10,6 +10,6 @@ module SuggestionHelper
 
   private
   def movie_suggestions(amount)
-    #Movie.find(:all, limit: amount)
+    Movie.first(amount)
   end
 end

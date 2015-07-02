@@ -8,12 +8,14 @@
 
     <div class="user-nav pull-right">
         <% if user_signed_in? %>
+          <ul id="notifications" class="notification-wrapper">
+            <%= render partial: '/layouts/notification_bell', locals: {unread_notification_count: @unread_notification_count, notifications: @notifications}%>
+          </ul>
           <ul class="profile-wrapper">
               <li>
-                  <label><%= @notifications[0].description %></label>
                   <!-- user profile -->
-                  <div class="profile">
-                      <img src="https://secure.gravatar.com/avatar/2f05a5d3273d54e90f1ad6dca5eb97bc?s=47" />
+                  <div tabindex="1" class="profile">
+                      <img class="profile-picture" src="https://secure.gravatar.com/avatar/2f05a5d3273d54e90f1ad6dca5eb97bc?s=47" />
                       <!-- more menu -->
                       <ul class="menu">
                           <a href="/settings"><li>Profile</li></a>

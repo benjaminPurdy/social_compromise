@@ -57,9 +57,17 @@
   margin-right: 10px;
 }
 
+.profile-wrapper {
+  float: right;
+}
+
+.glyphicon-bell {
+  font-size: 1.5em;
+}
 .profile {
   padding-bottom: 15px;
 }
+
 
 .profile img {
   width: 40px;
@@ -76,7 +84,7 @@
   left: 10px;
 }
 
-.menu {
+.profile .menu {
   display:none;
   clear:both;
   margin:20px 0 0 0;
@@ -86,11 +94,11 @@
 }
 /* hover profile show menu */
 .profile:hover .menu {
-  display: block;
   background-color: #eee;
   position: absolute;
   right: 10px;
   top: 40px;
+  display: block;
 }
 
 .menu li:hover {

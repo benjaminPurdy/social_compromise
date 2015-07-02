@@ -22,5 +22,8 @@ Rails.application.routes.draw do
     get "invites", :on => :collection
   end
 
+  get '/notifications/mark_all_viewed' => 'notifications#mark_all_viewed'
+  get '/notifications/most_recent' => 'notifications#most_recent'
+
   root to: "home#index"
 end

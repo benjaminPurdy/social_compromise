@@ -1,0 +1,16 @@
+<li>
+    <div tabindex="0" class="notifications">
+        <form class="notifications-button" method="get" action="/notifications/mark_all_viewed" data-remote="true">
+            <input id="notification-button-click" type="submit" class="btn btn-default" value=""/>
+            <i class="glyphicon glyphicon-bell"></i>
+        </form>
+          <% if !unread_notification_count.nil? && unread_notification_count > 0 %>
+            <span class="alert-danger badge"><%=unread_notification_count%></span>
+          <% end %>
+        <ul class="menu">
+            <% notifications.each do |notification| %>
+              <a href="<%=notification.link%>"><li><%=notification.description%></li></a>
+            <% end %>
+        </ul>
+    </div>
+</li>

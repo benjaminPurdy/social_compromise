@@ -1,0 +1,49 @@
+.notification-wrapper {
+  float: left;
+  .notifications {
+    .notifications-button {
+      margin-top: 6px;
+      input {
+        padding-left: 20px;
+      }
+      i {
+        :hover {
+          cursor: pointer;
+        }
+        top: 5px;
+        right: 31px;
+      }
+    }
+    .badge {
+      position: absolute;
+      top: 15px;
+      font-size: .5em;
+      right: 75px;
+    }
+    .menu {
+      position: absolute;
+      visibility: hidden;
+      margin: 20px 0 0 0;
+      background-color: #ffffff;
+      opacity: 0.6;
+      width: 200px;
+    }
+    /*:focus .menu {
+      background-color: #eee;
+      position: absolute;
+      right: 10px;
+      top: 40px;
+      display: block;
+    }*/
+  }
+}
+.notifications:focus .menu {
+  background-color: #eee;
+  position: absolute;
+  right: 10px;
+  top: 40px;
+  visibility: visible;
+}
+
+
+

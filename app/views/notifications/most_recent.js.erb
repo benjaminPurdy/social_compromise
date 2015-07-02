@@ -1,0 +1,1 @@
+$("#notifications").html("<%= escape_javascript(render partial: '/layouts/notification_bell', locals: { unread_notification_count: @unread_notification_count, notifications: @notifications } ) %>");

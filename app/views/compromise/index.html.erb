@@ -27,7 +27,7 @@
               <div class="row">
                   <% @movie_suggestions.each do |movie| %>
                     <div id=movie-<%=movie.id%> class="col-xs-18 col-sm-6 col-md-3">
-                      <%= render partial: 'movie_media_box', locals: { movie: movie} %>
+                      <%= render partial: 'movie_media_box', locals: { movie: movie, compromise: @compromise, participants: @participants, movies_showing: @movies_showing_on_compromise_screen} %>
                     </div>
                 <% end %>
 

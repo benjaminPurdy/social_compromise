@@ -11,6 +11,16 @@ module CompromiseHelper
     end
   end
 
+  def users_in_compromise(compromise)
+    participants = []
+    map = CompromiseUserMapping.where(compromise_id: compromise.id)
+    map.each do |mapping|
+      user = User.find(mapping.user_id)
+      participants.push user
+    end
+    participants
+  end
+
   def mark_as_displayed(compromise_id, movie_id)
     puts "movie_id: " + movie_id
     mapping = CompromiseUserMovieVoteMapping.find_by(user_id: current_user.id, movie_id: movie_id, compromise_id: compromise_id)

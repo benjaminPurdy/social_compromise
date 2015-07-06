@@ -1,8 +1,8 @@
 module SuggestionHelper
-  def suggestions(type, amount, participants, compromise_id, movies_showing_on_suggestion_page)
+  def suggestions(type, amount, participants, displayed_movies)
     case type
       when :movie
-        return movie_suggestions(amount, participants, compromise_id, movies_showing_on_suggestion_page)
+        return movie_suggestions(amount, participants, displayed_movies)
       else
         return []
     end
@@ -10,29 +10,31 @@ module SuggestionHelper
 
   private
 
-  def movie_suggestions(amount, participants, compromise_id, movies_showing_on_suggestion_page)
+  def movie_suggestions(amount, participants, displayed_movies)
     if (amount <= 0)
       return []
     end
 
+    updated_displayed_movies = displayed_movies
     suggestions = []
     sample_user = participants.sample
-    similar_movies = valid_similar_movies(sample_user, amount, compromise_id, movies_showing_on_suggestion_page)
+    similar_movies = valid_similar_movies(sample_user, amount, updated_displayed_movies)
     suggestions.concat similar_movies
+
     if (suggestions.count >= amount)
       return suggestions
     end
-    recommendations = valid_recommendations(compromise_id, amount - suggestions.count, movies_showing_on_suggestion_page)
+    recommendations = valid_recommendations(amount - suggestions.count, updated_displayed_movies)
     suggestions.concat recommendations
     if (suggestions.count >= amount)
       return suggestions.flatten
     end
-    top_movies = valid_top_movies(compromise_id, amount - suggestions.count, movies_showing_on_suggestion_page)
+    top_movies = valid_top_movies(amount - suggestions.count, updated_displayed_movies)
     suggestions.concat top_movies
     if (suggestions.count >= amount)
       return suggestions.flatten
     end
-    suggestions.push(random_movies(compromise_id, amount - suggestions.count,movies_showing_on_suggestion_page))
+    suggestions.push(random_movies(amount - suggestions.count, updated_displayed_movies))
     if (suggestions.count >= amount)
       return suggestions.flatten
     end
@@ -40,33 +42,28 @@ module SuggestionHelper
     suggestions
   end
 
-  def random_movies(compromise_id, max, movies_showing_on_suggestion_page)
+  def random_movies(max, displayed_movies)
     random_movies = []
     until random_movies.count == max
       offset = rand(Movie.count)
       random_movie = Movie.offset(offset).first
-      if is_valid_movie?(compromise_id, random_movie, movies_showing_on_suggestion_page )
+      if is_valid_movie?(random_movie, displayed_movies )
         random_movies.push(Movie.offset(offset).first)
-        movies_showing_on_suggestion_page.push(random_movie)
       end
     end
 
     return random_movies
   end
 
-  def valid_top_movies(compromise_id, max, movies_showing_on_suggestion_page)
+  def valid_top_movies(max, displayed_movies)
     valid_top_movies = []
     top_movies = Movie.top(count: 100).shuffle
-    puts "-"
-    puts top_movies.inspect
-    puts "-"
     top_movies.each_with_index do |top_movie, index|
       if index > 10
         return valid_top_movies
       end
-      if is_valid_movie?(compromise_id, top_movie, movies_showing_on_suggestion_page)
+      if is_valid_movie?(top_movie, displayed_movies)
         valid_top_movies.push top_movie
-        movies_showing_on_suggestion_page.push(top_movie)
       end
       if valid_top_movies.count >= max
         return valid_top_movies;
@@ -76,13 +73,12 @@ module SuggestionHelper
 
   end
 
-  def valid_recommendations(compromise_id, max, movies_showing_on_suggestion_page)
+  def valid_recommendations(max, displayed_movies)
     valid_recommendations = []
     recommendations = current_user.recommended_movies(10).shuffle
     recommendations.each do |recommendation|
-      if is_valid_movie?(compromise_id, recommendation, movies_showing_on_suggestion_page)
+      if is_valid_movie?(recommendation, displayed_movies)
         valid_recommendations.push recommendation
-        movies_showing_on_suggestion_page.push(recommendation)
       end
       if valid_recommendations.count >= max
         return valid_recommendations;
@@ -91,13 +87,12 @@ module SuggestionHelper
     valid_recommendations
   end
 
-  def valid_similar_movies(user, max, compromise_id, movies_showing_on_suggestion_page)
+  def valid_similar_movies(user, max, displayed_movies)
     valid_similar_movies = []
     similar_movies = current_user.liked_movies_in_common_with(user).shuffle
     similar_movies.each do |similar_movie|
-      if is_valid_movie?(compromise_id, similar_movie, movies_showing_on_suggestion_page)
+      if is_valid_movie?(similar_movie, displayed_movies)
         valid_similar_movies.push similar_movie
-        movies_showing_on_suggestion_page.push(similar_movie)
       end
       if valid_similar_movies.count >= max
         return valid_similar_movies;
@@ -105,20 +100,17 @@ module SuggestionHelper
     end
   end
 
-  def is_valid_movie?(compromise_id, movie, movies_showing_on_suggestion_page)
-    if !has_already_voted_on_movie?(compromise_id, movie) && !is_showing_on_suggestion_page(movie, movies_showing_on_suggestion_page)
-      return true;
-    end
-    return false;
+  def is_valid_movie?(movie, displayed_movies)
+    !contains_movie(displayed_movies, movie)
   end
 
-  def is_showing_on_suggestion_page(movie, movies_showing_on_suggestion_page)
-    movies_showing_on_suggestion_page.each do |movie_showing|
-      if movie_showing.id == movie.id
-        return true;
+  def contains_movie(movie_list, specific_movie)
+    movie_list.each do |movie|
+      if movie.id == specific_movie.id
+        return true
       end
     end
-    return false;
+    false
   end
 
   def has_already_voted_on_movie? (compromise_id, movie)

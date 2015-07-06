@@ -31,14 +31,15 @@ class CompromiseController < ApplicationController
     @compromise = Compromise.find(params[:compromise])
     @participants = users_in_compromise(@compromise)
     @movie_suggestions = []
-    #TODO: This is wrong
-    @owner = current_user
-    displayed_movies = CompromiseUserMovieVoteMapping.where(user_id: current_user.id, compromise_id: @compromise.id, displayed?: false, displaying?: true)
-    suggested_movies = suggestions(:movie, 4 - displayed_movies.count, @participants, @compromise.id, [])
+    @owner = owner(@compromise)
 
+    displayed_movies = displayed_movies(@compromise)
+    displaying_movies = displaying_movies(@compromise)
+    suggested_movies = suggestions(:movie, 4 - displayed_movies.count, @participants, displayed_movies)
     mark_as_displaying(suggested_movies, @compromise.id)
-    displayed_movies.each do |displayed_movie|
-      @movie_suggestions.push(Movie.find(displayed_movie.movie_id))
+
+    displaying_movies.each do |displaying_movie|
+      @movie_suggestions.push(displaying_movie)
     end
 
     @movie_suggestions.concat suggested_movies
@@ -46,23 +47,23 @@ class CompromiseController < ApplicationController
 
   end
 
+  def compromise(compromise_id)
+    @compromise ||= Compromise.find(compromise_id)
+  end
+
   def movie_vote
-    displayed_movies = []
-    @compromise_id = params["compromise_id"]
-    @compromise = Compromise.find(@compromise_id)
+    compromise_id = params["compromise_id"]
+    @compromise = compromise compromise_id
     @participants = users_in_compromise(@compromise)
     @movie_id = params["movie_id"]
-    movies_map = CompromiseUserMovieVoteMapping.where(user_id: current_user.id, compromise_id: @compromise_id, displayed?: false, displaying?: true)
-    movies_map.each do |movie_map|
-      displayed_movies.push(Movie.find(movie_map.movie_id))
-    end
-#    delete_old_votes(@compromise_id)
-    record_new_vote(@movie_id, @compromise_id, params["vote"])
-    mark_as_displayed(@compromise_id, @movie_id)
+    displayed_movies = displayed_movies(@compromise)
 
-    suggestions = suggestions(:movie, 1, @participants, @compromise_id, displayed_movies)
-    mark_as_displaying(suggestions, @compromise_id)
-    @new_suggestion = suggestions[0]
+    delete_old_votes(@compromise)
+    record_new_vote(@movie_id, @compromise.id, params["vote"])
+
+    suggestions = suggestions(:movie, 1, @participants, displayed_movies)
+    mark_as_displaying(suggestions, @compromise.id)
+    @new_suggestion = suggestions[0] || []
     respond_to do |format|
       format.js
     end
@@ -74,10 +75,5 @@ class CompromiseController < ApplicationController
 
   def save
 
-  end
-
-  private
-  def suggestion_config
-    @social_compromise ||= Rails.application.config.social_compromise["suggestion"]
   end
 end

@@ -1,39 +1,46 @@
-<div class="compromise">
-  <h2><%= @compromise.title %></h2>
-  <label>Description: </label><p><%= @compromise.description %></p>
-  <div class="container">
-      <label>Participants</label>
-      <div class="row">
-          <div class="col-lg-6">
-              <% @participants[0...@participants.size/2 + 1].each do |participant| %>
-                <span><%=participant.display_name%></span>
-                <% if participant == @owner%>
-                  <span><strong>owner</strong></span>
-                <% end %>
-              <% end %>
-          </div>
-          <div class="col-lg-6">
-            <% @participants[1 - @participants.size/2...@participants.size].each do |participant| %>
-              <span><%=participant.display_name%></span>
-              <% if participant == @owner%>
-                <span><strong>owner</strong></span>
-              <% end %>
-            <% end %>
-          </div>
+<div class="container">
+    <div class="page-header">
+        <h3>
+           <%=@compromise.title%>
+        </h3>
+    </div>
+    <div>
+        <label>
+            Description:
+        </label>
+        <br>
+        <span><%=@compromise.description%></span>
+    </div>
+    <div>
+        <label>
+            Participants:
+        </label>
+        <br>
+    </div>
+    <%@participants.each_with_index do |participant, index| %>
+      <% if index % 3 == 0 %>
+        <div class="row">
+      <%end%>
+      <div class="col-md-3">
+          <span>
+              <%=participant.display_name%>
+          </span>
+          <% if participant.id == @owner.id %>
+          <label>owner</label>
+            <%end%>
       </div>
-      <div class="movie-options">
-          <label>Cast your vote on the movies below</label>
-          <div class="container sm-media">
-              <div class="row">
-                  <% @movie_suggestions.each do |movie| %>
-                    <div id=movie-<%=movie.id%> class="col-xs-18 col-sm-6 col-md-3">
-                      <%= render partial: 'movie_media_box', locals: { movie: movie, compromise: @compromise, participants: @participants, movies_showing: @movies_showing_on_compromise_screen} %>
-                    </div>
-                <% end %>
-
-              </div><!--/row-->
-          </div><!--/container -->
-      </div>
-
-  </div>
-<div>
+      <% if index % 3 == 0 %>
+        </div>
+      <%end%>
+    <%end%>
+    <label>
+        Movie suggestions. Please vote on the movies below. &nbsp;&nbsp;
+    </label>
+    <div class="row">
+        <% @movie_suggestions.each do |movie| %>
+          <div id="movie-<%=movie.id%>" class="col-xs-18 col-sm-4 col-md-4">
+          <%= render partial: 'movie_media_box', locals: { movie: movie, compromise: @compromise} %>
+          </div>
+        <% end %>
+    </div>
+</div>

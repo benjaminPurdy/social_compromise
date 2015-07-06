@@ -9,9 +9,9 @@ class CompromiseController < ApplicationController
     compromise = Compromise.create!(title: params[:title], description: params[:description])
 
     CompromiseUserMapping.create!(user_id: current_user.id, compromise_id: compromise.id, owner: true)
-    members = params[:members] || []
+    participants = params[:participants] || []
     users = []
-    members.each do |key, value|
+    participants.each do |key, value|
       user = User.find_by_display_name(key)
       CompromiseUserMapping.create!(user_id: user.id, compromise_id: compromise.id)
       users.push(user)
@@ -35,7 +35,7 @@ class CompromiseController < ApplicationController
 
     displayed_movies = displayed_movies(@compromise)
     displaying_movies = displaying_movies(@compromise)
-    suggested_movies = suggestions(:movie, 4 - displayed_movies.count, @participants, displayed_movies)
+    suggested_movies = suggestions(:movie, 3 - displayed_movies.count, @participants, displayed_movies)
     mark_as_displaying(suggested_movies, @compromise.id)
 
     displaying_movies.each do |displaying_movie|

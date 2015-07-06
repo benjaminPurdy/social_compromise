@@ -1,33 +1,56 @@
-<div class="user-header">
-    <div class="box">
-        <div class="search">
-            <span class="icon"><i class="fa fa-search"></i></span>
-            <input type="search" id="search" placeholder="Search..." />
-        </div>
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="/">Social Compromise</a>
     </div>
-
-    <div class="user-nav pull-right">
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+            <li class="active">
+                <a href="/#about_us">About us</a>
+            </li>
+            <li>
+                <a href="/#features">Features</a>
+            </li>
+            <li>
+                <a href="/#contact_us">Contact Us</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav pull-right">
         <% if user_signed_in? %>
-          <ul id="notifications" class="notification-wrapper">
-            <%= render partial: '/layouts/notification_bell', locals: {unread_notification_count: @unread_notification_count, notifications: @notifications}%>
-          </ul>
-          <ul class="profile-wrapper">
               <li>
-                  <!-- user profile -->
-                  <div tabindex="1" class="profile">
-                      <img class="profile-picture" src="https://secure.gravatar.com/avatar/2f05a5d3273d54e90f1ad6dca5eb97bc?s=47" />
-                      <!-- more menu -->
-                      <ul class="menu">
-                          <a href="/settings"><li>Profile</li></a>
-                          <a href="/settings/friends"><li>Friends</li></a>
-                          <a rel="nofollow" data-method="delete" href="/users/logout"><li>Sign out</li></a>
-                      </ul>
-                  </div>
+                <img class="profile-picture" src="https://secure.gravatar.com/avatar/2f05a5d3273d54e90f1ad6dca5eb97bc?s=47" />
               </li>
-          </ul>
+              <li>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li class="dropdown-header">Nav header</li>
+                      <li><a href="#">Separated link</a></li>
+                      <li><a href="#">One more separated link</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-bell"></span></a>
+                  <ul class="dropdown-menu">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li class="dropdown-header">Nav header</li>
+                      <li><a href="#">Separated link</a></li>
+                      <li><a href="#">One more separated link</a></li>
+                  </ul>
+              </li>
         <% else %>
-          <%= link_to "Sign up", new_user_registration_path %> |
-          <%= link_to "Sign in", new_user_session_path %>
+          <li class="active">
+              <a href="/#about_us">Sign In</a>
+          </li>
+          <li>
+              <a href="#">Sign Up</a>
+          </li>
         <% end %>
+        </ul>
     </div>
-</div>
+</nav>

@@ -3,7 +3,10 @@
     <div class="caption">
         <h4><%= movie.title %></h4>
         <p><%= movie.synopsis %></p>
-        <%= link_to "yay", {:controller => "compromise", :action => "movie_vote", :vote => "yay", :movie_id => movie.id, :compromise_id => compromise.id}, :class => "btn btn-primary btn-sm", :remote => true%>
-        <%= link_to "nay", {:controller => "compromise", :action => "movie_vote"}, :class => "btn btn-primary btn-sm", :remote => true%>
+        <div class="btn-group">
+            <%= link_to "yay", {:controller => "compromise", :action => "movie_vote", :vote => "yay", :movie_id => movie.id, :compromise_id => compromise.id}, :class => "btn btn-success", :remote => true%>
+            <a href="/movie/index?id=<%=movie.id%>" class="btn btn-default">Learn More</a>
+            <%= link_to "nay", {:controller => "compromise", :action => "movie_vote", :vote => "nay", :movie_id => movie.id, :compromise_id => compromise.id}, :class => "btn btn-danger", :remote => true%>
+        </div>
     </div>
 </div>

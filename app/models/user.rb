@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :compromises, :through => :compromise_user_mapping
   has_many :notifications, :through => :notification_user_mappings
 
-  recommends :movies
+  recommends :movie
 
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable

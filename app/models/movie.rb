@@ -1,5 +1,5 @@
 class Movie < ActiveRecord::Base
-  validates :title, :uniqueness => {:scope => :release_date}
+  validates :themoviedb_id, :uniqueness
 
   has_many :actor_movie_mappings
   has_many :actors, through: :actor_movie_mappings

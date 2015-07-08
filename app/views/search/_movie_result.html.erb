@@ -1,9 +1,8 @@
 <div class="search-result actor">
+    <a href="/movie/index?id=<%=result.id%>" class="pull-left">
     <div class="media">
         <div class="media-left">
-            <a href="#" class="pull-left">
                 <img class="media-object" src="http://image.tmdb.org/t/p/w500/<%=result.poster_path%>" alt="<%=result.title%>">
-            </a>
         </div>
         <div class="media-body">
             <h4 class="media-heading">
@@ -12,4 +11,5 @@
             <i><%=truncate(result.overview, length: 250)%></i>
         </div>
     </div>
+    </a>
 </div>

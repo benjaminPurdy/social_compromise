@@ -26,18 +26,19 @@
         <ul class="nav navbar-nav pull-right">
         <% if user_signed_in? %>
               <li>
-                <img class="profile-picture" src="https://secure.gravatar.com/avatar/2f05a5d3273d54e90f1ad6dca5eb97bc?s=47" />
+                  <a href="/settings/profile" class="profile-picture" style="padding: 0px">
+                    <img src="https://secure.gravatar.com/avatar/2f05a5d3273d54e90f1ad6dca5eb97bc?s=47" />
+                  </a>
               </li>
               <li>
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%=current_user.display_name%> <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                      <li><a href="#">Action</a></li>
-                      <li><a href="#">Another action</a></li>
-                      <li><a href="#">Something else here</a></li>
+                      <li><a href="/settings/profile">Profile</a></li>
+                      <li><a href="/settings/friends">Friends</a></li>
+                      <li><a href="/settings/favorites">Favorites</a></li>
+                      <li><a href="/settings/settings">Settings</a></li>
                       <li role="separator" class="divider"></li>
-                      <li class="dropdown-header">Nav header</li>
-                      <li><a href="#">Separated link</a></li>
-                      <li><a href="#">One more separated link</a></li>
+                      <li><a rel="nofollow" data-method="delete" href="/users/logout">Logout</a></li>
                   </ul>
               </li>
               <li>
@@ -53,11 +54,11 @@
                   </ul>
               </li>
         <% else %>
-          <li class="active">
-              <a href="/#about_us">Sign In</a>
+          <li>
+              <%= link_to "Sign In", new_user_session_path %>
           </li>
           <li>
-              <a href="#">Sign Up</a>
+              <%= link_to "Sign Up", new_user_registration_path %>
           </li>
         <% end %>
         </ul>

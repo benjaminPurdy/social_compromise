@@ -10,11 +10,9 @@ module RottenTomatoHelper
   end
 
   def populate_movies1(url)
-    puts "url: " + url
     movies_populated = []
     movies = JSON.parse(Net::HTTP.get(URI(url)))
     total_pages = movies["total_pages"]
-    puts movies.inspect
     total_pages.times do |index|
       puts "page " + (index + 1).to_s + "/" + total_pages.to_s
       url_with_page = url + '&page=' + (index + 1).to_s

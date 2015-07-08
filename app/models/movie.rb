@@ -12,7 +12,7 @@ class Movie < ActiveRecord::Base
 
   def actors_basic
     @actors_basic ||= begin
-      sql = "select a.name as actor_name,a.profile_path, c.name as character_name from actor_movie_character_mappings m join actors a on m.actor_id = a.id join movies mo on m.movie_id = mo.id join characters c on m.character_id = c.id where mo.id = 9"
+      sql = "select a.id, a.name as actor_name,a.profile_path, c.name as character_name from actor_movie_character_mappings m join actors a on m.actor_id = a.id join movies mo on m.movie_id = mo.id join characters c on m.character_id = c.id where mo.id = " + self.id.to_s
 
       connection = ActiveRecord::Base.connection
       sql_value = connection.execute(sql)
@@ -23,7 +23,7 @@ class Movie < ActiveRecord::Base
 
   def similar_movies
     @similar_movies ||= begin
-      sql = 'select similar_movie.* from similar_movie_mappings s join movies similar_movie on similar_movie.id = s.movie_id where similar_movie_id = ' + self.id.to_s
+      sql = 'select mo.* from similar_movie_mappings s join movies mo on s.similar_movie_id = mo.id where movie_id = ' + self.id.to_s
 
       connection = ActiveRecord::Base.connection
       sql_value = connection.execute(sql)

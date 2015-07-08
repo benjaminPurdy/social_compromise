@@ -1,15 +1,15 @@
 <div class="search-result actor">
-  <div class="media">
-      <div class="media-left">
-          <a href="#" class="pull-left">
-              <img class="media-object" src="http://image.tmdb.org/t/p/w500/<%=result.profile_path%>" alt="<%=result.name%>">
-          </a>
-      </div>
-      <div class="media-body">
-          <h4 class="media-heading">
-              <%=result.name%>
-          </h4>
-          <i><%=truncate(result.biography, length: 250)%></i>
-      </div>
-  </div>
+  <a href="#" class="pull-left">
+    <div class="media">
+        <div class="media-left">
+            <img class="media-object" src="http://image.tmdb.org/t/p/w500/<%=result.profile_path%>" alt="<%=result.name%>">
+        </div>
+        <div class="media-body">
+            <h4 class="media-heading">
+                <%=result.name%>
+            </h4>
+            <i>From Wikipedia, the free encyclopedia. Edward Hogg (born 1979) is an English actor, known for portraying Jesco White in White Lightnin' and Stephen Turnbull in Bunny and the Bull. Description above from the Wikipedia article Edward Hogg, licensed ...</i>
+        </div>
+    </div>
+  </a>
 </div>

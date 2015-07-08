@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   get '/compromise/index' => 'compromise#index'
   get '/compromise/movie_vote' => 'compromise#movie_vote'
   get '/movie/index' => 'movie#index'
+  get '/actor/index' => 'actor#index'
+  get '/user/index' => 'user#index'
+  get '/user/friends_request' => 'user#friends_request'
 
   resources :friends, :controller => 'friendships', :except => [:show, :edit] do
     get "requests", :on => :collection

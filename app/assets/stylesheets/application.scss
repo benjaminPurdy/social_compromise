@@ -15,6 +15,18 @@
  */
 
 body {
-  #background-image: url("http://i.stack.imgur.com/pMAiU.jpg");
   background-color: #e5e5e5 !important;
+}
+
+.hover-link {
+  a {
+    padding: 15px;
+    text-decoration: none;
+    color: black;
+  }
+  a:hover {
+    opacity: 0.7;
+    text-decoration: none;
+    color: #080808;
+  }
 }

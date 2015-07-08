@@ -1,3 +1,13 @@
+GIT
+  remote: git://github.com/elasticsearch/elasticsearch-rails.git
+  revision: ded20356920802c35d258756113acfd95b25ade6
+  specs:
+    elasticsearch-model (0.1.7)
+      activesupport (> 3)
+      elasticsearch (> 0.4)
+      hashie
+    elasticsearch-rails (0.1.7)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -58,6 +68,14 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    elasticsearch (1.0.12)
+      elasticsearch-api (= 1.0.12)
+      elasticsearch-transport (= 1.0.12)
+    elasticsearch-api (1.0.12)
+      multi_json
+    elasticsearch-transport (1.0.12)
+      faraday
+      multi_json
     erubis (2.7.0)
     execjs (2.2.2)
     faraday (0.9.1)
@@ -205,6 +223,8 @@ DEPENDENCIES
   amistad
   coffee-rails (~> 4.1.0)
   devise
+  elasticsearch-model!
+  elasticsearch-rails!
   jbuilder (~> 2.0)
   jquery-rails
   omniauth-facebook

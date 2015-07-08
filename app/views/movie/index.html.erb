@@ -1,39 +1,38 @@
 <div class="container">
     <div class="movie-content">
-        <img class="pull-left" src="https://s3.amazonaws.com/jetstrap-site/images/website/index/what_icon.png">
-        <h3>
-            <%=@movie.title%> (<%=@movie.release_date %>)
-        </h3>
-        <label>
-            Runtime:
-        </label>
-        <span><%=@movie.runtime%> mins</span>
-        <label>
-            Rating:
-        </label>
-        <span><%=@movie.mpaa_rating%></span>
-        <label>
-            Audiance Score:
-        </label>
-        <span><%=@movie.audience_score%>%</span>
-        <label>
-            Critics Score:
-        </label>
-        <span><%=@movie.critics_score%>%</span>
-        <label class="pull-right">
-            You liked this movie
-        </label>
-        <hr>
-        <p>
-            <%=@movie.synopsis%>
-        </p>
-        <label>
-            Stars:
-        </label>
-        <span>hello world, hello world2, hello world 3</span>
+        <div class="row">
+            <div class="col-md-3">
+                <img class="pull-left" src="http://image.tmdb.org/t/p/w500/<%=@movie.poster_path%>" alt="<%=@movie.title%>">
+            </div>
+            <div class="col-md-9">
+              <h3>
+                  <%=@movie.title%> (<%=@movie.release_date %>)
+              </h3>
+              <label>
+                  Runtime:
+              </label>
+              <% if @movie.runtime == 0 %>
+                <span>undefined</span>
+              <%else%>
+                <span><%=@movie.runtime%> mins</span>
+              <%end%>
+              <label class="pull-right">
+                  You liked this movie
+              </label>
+              <hr>
+              <p>
+                  <%=@movie.overview%>
+              </p>
+              <label>
+                  Genres:
+              </label>
+              <span>
+                <%=@movie.genres.map(&:name).join(', ') %>
+              </span>
+            </div>
+        </div>
+
     </div>
-    <a href="#" class="btn btn-default">Watch Trailer</a>
-    <br>
     <label>
         Friends who like this movie
     </label>
@@ -49,88 +48,50 @@
     <br>
     <span>Hulu: <i class="glyphicon glyphicon-ban-circle"></i></span>
     <br>
-    <label>
-        Full Cast
-    </label>
-    <div class="media">
-        <div class="media-left">
-            <a href="#" class="pull-left">
-                <img class="media-object" src="https://s3.amazonaws.com/media.jetstrap.com/HxsVr0VRRYu0MpQvPntC_photo.png" alt="..." width="100">
-            </a>
+    <div class="actors">
+      <label>
+          Actors
+      </label>
+      <% @actors.first(3).each do |actor| %>
+        <div class="media">
+            <div class="media-left">
+                <a href="#" class="pull-left">
+                    <img class="media-object" src="http://image.tmdb.org/t/p/w500/<%=actor["profile_path"]%>" alt="<%=actor["name"]%>">
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">
+                    <%=actor["actor_name"]%>
+                </h4>
+                <i><%=actor["character_name"]%></i>
+            </div>
         </div>
-        <div class="media-body">
-            <h4 class="media-heading">
-                Media heading
-            </h4>
-            ...
-        </div>
+      <%end%>
+      <%if @actors.count >3 %>
+        <label>Click here for full cast list</label>
+      <%end%>
     </div>
-    <div class="media">
-        <div class="media-left">
-            <a href="#" class="pull-left">
-                <img class="media-object" src="https://s3.amazonaws.com/media.jetstrap.com/HxsVr0VRRYu0MpQvPntC_photo.png" alt="..." width="100">
+    <div class="similar-movies">
+      <label>
+          Similar Movies
+      </label>
+      <% @similar_movies.first(3).each do |similar_movie| %>
+        <div class="media">
+          <div class="media-left">
+            <a href="/movie/index?id=<%=similar_movie["id"]%>" class="pull-left">
+              <img class="media-object" src="http://image.tmdb.org/t/p/w500/<%=similar_movie["poster_path"]%>" alt="<%=similar_movie["title"]%>">
             </a>
-        </div>
-        <div class="media-body">
+          </div>
+          <div class="media-body">
             <h4 class="media-heading">
-                Media heading
+              <%=similar_movie["title"]%>
             </h4>
-            ...
+            <%=truncate(similar_movie["overview"], length: 250)%>
+          </div>
         </div>
-    </div>
-    <div class="media">
-        <div class="media-left">
-            <a href="#" class="pull-left">
-                <img class="media-object" src="https://s3.amazonaws.com/media.jetstrap.com/HxsVr0VRRYu0MpQvPntC_photo.png" alt="..." width="100">
-            </a>
-        </div>
-        <div class="media-body">
-            <h4 class="media-heading">
-                Media heading
-            </h4>
-            ...
-        </div>
-    </div>
-    <label>
-        Similar Movies
-    </label>
-    <div class="media">
-        <div class="media-left">
-            <a href="#" class="pull-left">
-                <img class="media-object" src="https://s3.amazonaws.com/media.jetstrap.com/HxsVr0VRRYu0MpQvPntC_photo.png" alt="..." width="100">
-            </a>
-        </div>
-        <div class="media-body">
-            <h4 class="media-heading">
-                Media heading
-            </h4>
-            ...
-        </div>
-    </div>
-    <div class="media">
-        <div class="media-left">
-            <a href="#" class="pull-left">
-                <img class="media-object" src="https://s3.amazonaws.com/media.jetstrap.com/HxsVr0VRRYu0MpQvPntC_photo.png" alt="..." width="100">
-            </a>
-        </div>
-        <div class="media-body">
-            <h4 class="media-heading">
-                Media heading
-            </h4>
-            ...
-        </div>
-    </div>
-    <div class="media">
-        <div class="media-left">
-            <a href="#" class="pull-left">
-                <img class="media-object" src="https://s3.amazonaws.com/media.jetstrap.com/HxsVr0VRRYu0MpQvPntC_photo.png" alt="..." width="100">
-            </a>
-        </div>
-        <div class="media-body">
-            <h4 class="media-heading">
-                Media heading
-            </h4>
-            ...
-        </div>
+      <%end%>
+      <%if @similar_movies.count >3 %>
+        <label>Click here for more similar movies</label>
+      <%end%>
     </div>
 </div>

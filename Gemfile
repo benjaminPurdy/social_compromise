@@ -34,6 +34,9 @@ gem 'devise'
 gem 'recommendable'
 gem 'ruby-tmdb3'
 
+gem 'elasticsearch-model', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
+gem 'elasticsearch-rails', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

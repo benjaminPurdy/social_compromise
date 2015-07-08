@@ -26,5 +26,7 @@ Rails.application.routes.draw do
   get '/notifications/mark_all_viewed' => 'notifications#mark_all_viewed'
   get '/notifications/most_recent' => 'notifications#most_recent'
 
+  get '/search' => 'search#search'
+
   root to: "home#index"
 end

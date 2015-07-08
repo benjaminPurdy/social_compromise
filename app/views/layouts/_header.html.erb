@@ -13,6 +13,15 @@
             <li>
                 <a href="/#contact_us">Contact Us</a>
             </li>
+            <li>
+                <form action="/search?page=1" class="search-form" _lpchecked="1">
+                    <div class="form-group has-feedback">
+                        <label for="q" class="sr-only">Search</label>
+                        <input type="text" class="form-control" name="q" id="search" placeholder="search">
+                        <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                    </div>
+                </form>
+            </li>
         </ul>
         <ul class="nav navbar-nav pull-right">
         <% if user_signed_in? %>

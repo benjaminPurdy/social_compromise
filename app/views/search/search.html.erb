@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="search-container">
+    <form action="#" method="get">
+      <div class="input-group">
+        <input class="form-control" id="system-search" name="q" placeholder="Search for" required="" value="<%=@query%>">
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+        </span>
+      </div>
+    </form>
+      <%unless @query.nil? || @query.empty?%>
+        <label>Results for:</label>
+        <span>"<%=@query%>"</span>
+        <hr>
+        <%if @results.empty? %>
+          <label>Sorry, we found no results for </label>
+          <span>"<%=@query%></span>
+        <%end%>
+        <%@results.each do |result| %>
+          <%= puts result.class.name.downcase!%>
+          <%case result.class.name.downcase!
+            when "actor" %>
+              <%= render partial: 'actor_result', locals: {result: result} %>
+            <%when "movie" %>
+              <%= render partial: 'movie_result', locals: {result: result} %>
+            <%when "user" %>
+              <%= render partial: 'user_result', locals: {result: result} %>
+            <%else%>
+              <%= render partial: 'default_result', locals: {result: result} %>
+          <%end%>
+        <%end%>
+      <%end%>
+    </div>
+</div>

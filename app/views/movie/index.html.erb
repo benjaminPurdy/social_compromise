@@ -33,21 +33,16 @@
         </div>
 
     </div>
-    <label>
-        Friends who like this movie
-    </label>
-    <br>
-    <span>look at all these cool people who like this movie, this will be their images with their name next to it</span>
     <br>
     <label>
         Where to find this movie
     </label>
     <br>
-    <span>Netflix's: <i class="glyphicon glyphicon-ok-circle"></i></span>
-    <a href="#">Watch on netflix's now</a>
-    <br>
-    <span>Hulu: <i class="glyphicon glyphicon-ban-circle"></i></span>
-    <br>
+    <%if @iframe_url.nil?%>
+       <i>Sorry, there was an error determining where this movie could be viewed</i>
+    <%else%>
+      <iframe frameborder="0" src="<%=@iframe_url%>" width="480" height="190" scrolling="no"></iframe>
+    <%end%>
     <div class="actors hover-link">
       <label>
           Actors

@@ -52,6 +52,8 @@ GEM
     bcrypt (3.1.9)
     bcrypt (3.1.9-java)
     builder (3.2.2)
+    canistreamit (0.0.2)
+      httparty
     chronic (0.10.2)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -86,6 +88,9 @@ GEM
     hike (1.2.3)
     hooks (0.4.0)
       uber (~> 0.0.4)
+    httparty (0.13.5)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     jbuilder (2.2.6)
       activesupport (>= 3.0.0, < 5)
@@ -221,6 +226,7 @@ PLATFORMS
 
 DEPENDENCIES
   amistad
+  canistreamit
   coffee-rails (~> 4.1.0)
   devise
   elasticsearch-model!

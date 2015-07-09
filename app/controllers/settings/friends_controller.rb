@@ -1,4 +1,4 @@
-class Settings::FriendsController < Settings::BaseController
+class Settings::FriendsController < ApplicationController
 
   before_filter :authenticate_user!
 

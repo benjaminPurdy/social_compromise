@@ -2,6 +2,6 @@ setInterval(function(){
   $.get('/notifications/most_recent', function(data){
     console.log(data);
   });
-}, 300000);
+}, 30000);
 
 

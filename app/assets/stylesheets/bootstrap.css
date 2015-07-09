@@ -652,7 +652,7 @@ th {
   content: "\e122";
 }
 .glyphicon-bell:before {
-  content: "\e123";
+  content: "\e123" !important;
 }
 .glyphicon-certificate:before {
   content: "\e124";

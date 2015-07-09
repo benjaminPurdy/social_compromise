@@ -44,6 +44,10 @@ class CompromiseController < ApplicationController
 
     @movie_suggestions.concat suggested_movies
 
+    puts "-" * 100
+    puts "diplaying_movies count : " + displaying_movies(@compromise).count.to_s
+    puts "-" * 100
+
 
   end
 
@@ -62,6 +66,7 @@ class CompromiseController < ApplicationController
     record_new_vote(@movie_id, @compromise.id, params["vote"])
 
     suggestions = suggestions(:movie, 1, @participants, displayed_movies)
+
     mark_as_displaying(suggestions, @compromise.id)
     @new_suggestion = suggestions[0] || []
     respond_to do |format|

@@ -98,6 +98,7 @@ module SuggestionHelper
         return valid_similar_movies;
       end
     end
+    valid_similar_movies
   end
 
   def is_valid_movie?(movie, displayed_movies)

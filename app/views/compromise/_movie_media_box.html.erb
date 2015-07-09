@@ -1,8 +1,8 @@
-<div class="thumbnail center">
-    <img src=<%= movie.thumbnail %>>
+<div class="thumbnail center movie-media-box">
+    <img src="http://image.tmdb.org/t/p/w500/<%=movie.poster_path%>" alt="<%=movie.title%>">
     <div class="caption">
         <h4><%= movie.title %></h4>
-        <p><%= movie.synopsis %></p>
+        <p><%=truncate(movie.overview, length: 400)%></p>
         <div class="btn-group">
             <%= link_to "yay", {:controller => "compromise", :action => "movie_vote", :vote => "yay", :movie_id => movie.id, :compromise_id => compromise.id}, :class => "btn btn-success", :remote => true%>
             <a href="/movie/index?id=<%=movie.id%>" class="btn btn-default">Learn More</a>

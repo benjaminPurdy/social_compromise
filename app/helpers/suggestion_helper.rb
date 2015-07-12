@@ -50,7 +50,7 @@ module SuggestionHelper
     puts random_movies.inspect
     puts random_movies.count
     puts "-"  * 100
-    suggestions.cancat random_movies
+    suggestions.concat random_movies
     suggestions.push(random_movies(amount - suggestions.count, updated_displayed_movies))
     if (suggestions.count >= amount)
       return suggestions.flatten

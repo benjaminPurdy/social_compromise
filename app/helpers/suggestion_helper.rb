@@ -20,26 +20,43 @@ module SuggestionHelper
     sample_user = participants.sample
     similar_movies = valid_similar_movies(sample_user, amount, updated_displayed_movies)
     suggestions.concat similar_movies
-
+    puts "similar movies"
+    puts similar_movies.inspect
+    puts similar_movies.count
+    puts "-"  * 100
     if (suggestions.count >= amount)
       return suggestions
     end
     recommendations = valid_recommendations(amount - suggestions.count, updated_displayed_movies)
+    puts "recommendations"
+    puts recommendations.inspect
+    puts recommendations.count
+    puts "-"  * 100
     suggestions.concat recommendations
     if (suggestions.count >= amount)
       return suggestions.flatten
     end
     top_movies = valid_top_movies(amount - suggestions.count, updated_displayed_movies)
+    puts "top_movies"
+    puts top_movies.inspect
+    puts top_movies.count
+    puts "-"  * 100
     suggestions.concat top_movies
     if (suggestions.count >= amount)
       return suggestions.flatten
     end
+    random_movies =random_movies(amount - suggestions.count, updated_displayed_movies)
+    puts "random_movies"
+    puts random_movies.inspect
+    puts random_movies.count
+    puts "-"  * 100
+    suggestions.cancat random_movies
     suggestions.push(random_movies(amount - suggestions.count, updated_displayed_movies))
     if (suggestions.count >= amount)
       return suggestions.flatten
     end
     puts "ERROR " * 100
-    suggestions
+    suggestions.flatten
   end
 
   def random_movies(max, displayed_movies)

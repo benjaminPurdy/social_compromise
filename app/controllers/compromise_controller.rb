@@ -35,7 +35,7 @@ class CompromiseController < ApplicationController
 
     displayed_movies = displayed_movies(@compromise)
     displaying_movies = displaying_movies(@compromise)
-    suggested_movies = suggestions(:movie, 3 - displayed_movies.count, @participants, displayed_movies).flatten
+    suggested_movies = suggestions(:movie, 3 - displayed_movies.count, @participants, displayed_movies)
     puts "---" * 100
     puts "compromise"
     puts @compromise.inspect
@@ -43,6 +43,7 @@ class CompromiseController < ApplicationController
     puts displayed_movies.inspect
     puts "suggested"
     puts suggested_movies.inspect
+    puts "suggested count"
     puts suggested_movies.count
     puts "displaying"
     puts displaying_movies.inspect

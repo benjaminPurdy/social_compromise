@@ -12,7 +12,7 @@
                 <p>
                     <%=@actor.biography%>
                 </p>
-                <% if @actor.deathday.empty? %>
+                <% if @actor.deathday.nil? || @actor.deathday.empty? %>
                   <label>Birthday: </label>
                   <span><%=@actor.birthday%></span>
                 <%else%>

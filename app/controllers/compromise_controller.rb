@@ -36,6 +36,16 @@ class CompromiseController < ApplicationController
     displayed_movies = displayed_movies(@compromise)
     displaying_movies = displaying_movies(@compromise)
     suggested_movies = suggestions(:movie, 3 - displayed_movies.count, @participants, displayed_movies)
+    puts "---" * 100
+    puts "compromise"
+    puts @compromise.inspect
+    puts "displayed"
+    puts displayed_movies.inspect
+    puts "suggested"
+    puts suggested_movies.inspect
+    puts "displaying"
+    puts displaying_movies.inspect
+    puts "---" * 100
     mark_as_displaying(suggested_movies, @compromise.id)
 
     displaying_movies.each do |displaying_movie|

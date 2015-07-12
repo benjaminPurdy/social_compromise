@@ -25,6 +25,11 @@ test:
   <<: *test
   database: db/test.sqlite3
 
+
+#production:
+#  <<: *default
+#  database: social_compromise
+
 production:
   adapter: postgresql
   host: ec2-54-225-134-223.compute-1.amazonaws.com

@@ -15,7 +15,8 @@ class SearchController < ApplicationController
       when 'movie'
         @results = Movie.search(@query).page(page).records.to_a
       else
-        @results = Elasticsearch::Model.search(@query, [User, Movie, Actor]).records.to_a
+        #@results = Elasticsearch::Model.search(@query, [User, Movie, Actor]).records.to_a
+        @results = Movie.search(@query).records.to_a
     end
   end
 end

@@ -78,6 +78,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   config.logger = Logger.new(STDOUT)
   config.logger.level = Logger.const_get((ENV["LOG_LEVEL"] || "INFO").upcase)
+
   Elasticsearch::Model.client = Elasticsearch::Client.new host: ENV['SEARCHBOX_URL']
   Movie.import force: true
   Actor.import force: true

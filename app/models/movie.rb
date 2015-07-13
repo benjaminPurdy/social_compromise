@@ -9,6 +9,7 @@ class Movie < ActiveRecord::Base
   has_many :genres, through: :genre_movie_mappings
 
   include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
 
   def actors_basic
     @actors_basic ||= begin

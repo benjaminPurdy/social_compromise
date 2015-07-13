@@ -57,7 +57,7 @@ module RottenTomatoHelper
     url = 'https://api.themoviedb.org/3/movie/' + movie.themoviedb_id.to_s + '/credits?api_key=09fb6f99c8994ae7bfaa6206be6dbd5d'
     uri =URI(url)
     cast_info = JSON.parse(Net::HTTP.get(uri))
-    cast_list = cast_info["cast"]
+    cast_list = cast_info["cast"] | []
     cast_list.each do |cast_member|
       actor = find_or_create_actor(cast_member)
       character = Character.find_or_create_by!(name: cast_member["character"])

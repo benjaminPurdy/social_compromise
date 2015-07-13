@@ -7,6 +7,7 @@ class Actor < ActiveRecord::Base
   has_many :characters, through: :actor_movie_character_mappings
 
   include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
 
   def movie_basics
     @actors_basic ||= begin

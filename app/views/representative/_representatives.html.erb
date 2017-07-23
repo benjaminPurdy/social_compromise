@@ -1,0 +1,18 @@
+<%= label %>
+Hello World
+
+<% data.each do |data| %>
+    <div class="media">
+      <div class="media-left">
+        <a href="#">
+          <img class="media-object" src="https://s3.amazonaws.com/media.jetstrap.com/HxsVr0VRRYu0MpQvPntC_photo.png" alt="..." width="100">
+        </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">
+          <%= link_to data.name, representative_path(data.id) %>
+        </h4>
+        Stuff about this dude/dudit
+      </div>
+    </div>
+<%end %>

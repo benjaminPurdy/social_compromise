@@ -1,6 +1,6 @@
 <nav class="navbar navbar-inverse" role="navigation">
     <div class="navbar-header">
-        <a class="navbar-brand" href="/">Social Compromise</a>
+        <a class="navbar-brand" href="/">Unrecognized Voices</a>
     </div>
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
@@ -41,9 +41,9 @@
                       <li><a rel="nofollow" data-method="delete" href="/users/logout">Logout</a></li>
                   </ul>
               </li>
-              <li id="notification-bell">
-                  <%= render partial: '/layouts/notification_bell', locals: {unread_notification_count: @unread_notification_count, notifications:  @notifications}%>
-              </li>
+              <!--<li id="notification-bell">-->
+                  <!--<%= render partial: '/layouts/notification_bell', locals: {unread_notification_count: @unread_notification_count, notifications:  @notifications}%>-->
+              <!--</li>-->
         <% else %>
           <li>
               <%= link_to "Sign In", new_user_session_path %>

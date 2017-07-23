@@ -1,1 +1,0 @@
-$("#movie-<%=@movie_id%>").html("<%= escape_javascript(render partial: 'movie_media_box', locals: { movie: @new_suggestion, compromise: @compromise} ) %>").attr("id","movie-<%=@new_suggestion.id%>");

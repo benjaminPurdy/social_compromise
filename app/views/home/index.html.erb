@@ -2,31 +2,30 @@
     <div class="container">
         <img src="https://s3.amazonaws.com/jetstrap-site/images/website/common/jetstrap_logo.png">
         <h1>
-            Welcome to Social Compromise!
+            Welcome to Unrecognized Voices!
         </h1>
         <p>
-            Where you can start group events and find activities everyone will enjoy
+            Where you can view unbiased information about the Congress men and women who represent you AND where you can
+            take action if they don't practice what they preach.
         </p>
         <p>
             To learn more read about all of the features and about how we work as
             a team.
         </p>
         <p>
-            When you are ready sign up using your facebook or google account or create
-            a brand new account then start a new event and enjoy the world together
-            with your friends.
+            When you are ready, sign up using your facebook or google account or create
+            a brand new account then start making your voice heard by the world.
         </p>
-        <% if user_signed_in? %>
-          <a href="/compromise/new" class="btn btn-primary btn-lg">Start a new event today!</a>
-        <% else %>
-          <a href="/users/login" class="btn btn-primary btn-lg">Start a new event today!</a>
-        <% end %>
+
+        <%= link_to 'Show Bills', bills_path('all') %>
+        <%= link_to 'Show Representatives', representatives_path('all') %>
+        <a href="/compromise/new" class="btn btn-primary btn-lg">Show me the Graphs</a>
     </div>
 </div>
 <div class="container">
     <!-- Example row of columns -->
     <h2 id="about_us">
-        What is Social Compromise?
+        What is Unrecoignized Voices used for?
     </h2>
     <hr>
     <p>

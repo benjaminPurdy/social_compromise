@@ -1,18 +1,1 @@
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-large glyphicon-bell"></span></a>
-<%puts "-"  * 100
-puts unread_notification_count.inspect
-  puts "-"  * 100%>
-<% if !unread_notification_count.nil? && unread_notification_count > 0 %>
-  <span class="alert-danger badge"><%=unread_notification_count%></span>
-<% end %>
-<ul class="dropdown-menu">
-    <% notifications.first(5).each do |notification| %>
-      <li><a href="<%=notification.link%>"><%=notification.description%></a></li>
-    <% end %>
-    <% if notifications.count > 5 %>
-     <li><a>Show More</a></li>
-    <%end%>
-    <% if notifications.empty? %>
-      <li><label>No notifications</label></li>
-    <%end%>
-</ul>

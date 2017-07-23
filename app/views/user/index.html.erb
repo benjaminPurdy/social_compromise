@@ -26,55 +26,9 @@
                   <span> <%=@user.age%> </span>
                 <%end%>
                 <br>
-                <%if @is_friend %>
-                  <label> Email: </label>
-                  <span><%=@user.email%></span>
-                <%end%>
                  <br>
-                <%if @is_friend %>
-                  <a href="/user/friends_request?user=<%=@user.id%>&request_type=remove" class="btn btn-danger">Remove As Friend</a>
-                <%elsif @pending_invite%>
-                  <a href="#" class="btn btn-warning disabled">Invite Is Pending</a>
-                <%elsif @invited%>
-                  <a href="/user/friends_request?user=<%=@user.id%>&request_type=approve" class="btn btn-success">Accept Invite</a>
-                  <a href="/user/friends_request?user=<%=@user.id%>&request_type=block" class="btn btn-warning">Decline Invite</a>
-                 <%else%>
-                  <a href="/user/friends_request?user=<%=@user.id%>&request_type=add" class="btn btn-success">Add as Friend</a>
-                  <%end%>
                 <br>
             </div>
         </div>
-        <%if @is_friend %>
-          <div class="hover-link">
-              <label>Similar Interests</label>
-              <br>
-              <%if @common_likes.empty? %>
-                <i>No similar likes</i>
-              <%else%>
-                <span> <%=@common_likes.map(&:title).join(', ') %> </span>
-              <%end%>
-              <br>
-              <label>Friends</label>
-              <br>
-              <div class="friends-list">
-                <% @user.friends.each do |friend| %>
-                  <a href="/user/index?id=<%=friend.id%>" class="pull-left">
-                      <div class="media">
-                          <div class="media-left">
-                              <img class="pull-left" src="http://image.tmdb.org/t/p/w500//3Rdq9ZYEPxTJxyx1GKdlR6gThzV.jpg"
-                          </div>
-                          <div class="media-body">
-                              <h4 class="media-heading">
-                                  <%=friend.display_name%>
-                              </h4>
-                              <%=truncate(friend.bio, length: 250)%>
-                          </div>
-                      </div>
-                  </a>
-                  <br>
-                <%end%>
-              </div>
-          </div>
-        <%end%>
     </div>
 </div>

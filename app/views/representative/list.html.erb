@@ -1,28 +1,4 @@
-In Representatives(s)
-
-<ul class="nav nav-tabs">
-  <li role="presentation" class="active"><a href="#">All</a></li>
-  <li role="presentation"><a href="#">Local</a></li>
-  <li role="presentation"><a href="#">House</a></li>
-  <li role="presentation"><a href="#">Senate</a></li>
-</ul>
-
-
-<%if @tab == 'all'%>
-    <%= render partial: '/representative/representatives', locals: {label: @local_label, data: @local_representatives}%>
-    <%= render partial: '/representative/representatives', locals: {label: @house_label, data: @house_representatives}%>
-    <%= render partial: '/representative/representatives', locals: {label: @senate_label, data: @senate_representatives}%>
-<%end%>
-
-<%if @tab == 'local'%>
-    <%= render partial: '/representative/representatives', locals: {label: @local_label, data: @local_representatives}%>
-<%end%>
-
-<%if @tab == 'house'%>
-    <%= render partial: '/representative/representatives', locals: {label: @house_label, data: @house_representatives}%>
-<%end%>
-
-<%if @tab == 'senate'%>
-    <%= render partial: '/representative/representatives', locals: {label: @senate_label, data: @senate_representatives}%>
-<%end%>
-
+<div class="representatives">
+  <%= render partial: '/representative/representatives', locals: {label: user_location_label, data: @local_representatives}%>
+  <div id="representative-map"></div>
+</div>

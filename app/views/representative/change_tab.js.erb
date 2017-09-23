@@ -1,0 +1,5 @@
+$("#representatives_container").html("<%= escape_javascript(render partial: '/representative/representatives_container',
+             locals: {local_label: @local_label, local_representatives: @local_representatives,
+                      senate_label: @senate_label, senate_representatives: @senate_representatives,
+                      house_label: @house_label, house_representatives: @house_representatives,
+                      tab: @tab})%>");

@@ -12,10 +12,19 @@
           rel="stylesheet">
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
           rel="stylesheet">
+    <script src="https://cdn.anychart.com/js/7.14.3/anychart-bundle.min.js"></script>
+    <script src="https://cdn.anychart.com/samples-data/maps-in-dashboard/states-of-united-states-dashboard-with-multi-select/data.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/7.14.3/anychart-ui.min.css" />
+    <link rel="stylesheet" href="https://cdn.anychart.com/playground-css/maps_in_dashboard/USA_dashboard_multiselect/style.css" />
 </head>
 <body>
 
 <%= render partial: '/layouts/header'%>
+
+<div id="particles-js"> </div>
+<div id="nav-buffer"> </div>
 
 <%= yield %>
 

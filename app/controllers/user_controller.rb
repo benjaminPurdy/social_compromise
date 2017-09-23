@@ -1,5 +1,8 @@
 class UserController < ApplicationController
   include UserHelper
+  def list
+  end
+
   def index
   end
 
@@ -10,6 +13,5 @@ class UserController < ApplicationController
 
     flash.notice = 'User updated!'
     redirect_to root_path
-
   end
 end

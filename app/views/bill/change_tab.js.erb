@@ -1,0 +1,6 @@
+history.pushState({ }, '<%= @tab %>', '<%= @tab %>.html')
+$("#bills_container").html("<%= escape_javascript(render partial: '/bill/bills_container',
+             locals: {local_label: @local_label, local_bills: @local_bills,
+                      senate_label: @senate_label, senate_bills: @senate_bills,
+                      house_label: @house_label, house_bills: @house_bills,
+                      tab: @tab})%>");

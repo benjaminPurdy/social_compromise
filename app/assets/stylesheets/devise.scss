@@ -6,149 +6,140 @@
     color: #DF4A32;
   }
 }
-.login-page, .signup-page, .forgot-password-page{
-  position:relative;
-  margin: 10px auto;
-  width: 500px;
-  height: 400px;
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 3px;
-  -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
-  -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
-  box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
-}
-.lb-header{
-  position:relative;
-  color: #00415d;
-  margin: 5px 5px 10px 5px;
-  padding-bottom:10px;
-  border-bottom: 1px solid #eee;
-  text-align:center;
-  height:28px;
-}
-.lb-header a{
-  margin: 0 25px;
-  padding: 0 20px;
-  text-decoration: none;
-  color: #666;
-  font-weight: bold;
-  font-size: 15px;
-  -webkit-transition: all 0.1s linear;
-  -moz-transition: all 0.1s linear;
-  transition: all 0.1s linear;
-}
-.lb-header .active{
-  color: #029f5b;
-  font-size: 18px;
-}
-.social-login{
-  position:relative;
-  float: left;
-  width: 100%;
-  height:auto;
-  padding: 10px 0 15px 0;
-  border-bottom: 1px solid #eee;
-}
-.social-login a{
-  position:relative;
-  float: left;
-  width:calc(40% - 8px);
-  text-decoration: none;
-  color: #fff;
-  border: 1px solid rgba(0,0,0,0.05);
-  padding: 12px;
-  border-radius: 2px;
-  font-size: 12px;
-  text-transform: uppercase;
-  margin: 0 3%;
-  text-align:center;
-}
-.social-login a i{
-  position: relative;
-  float: left;
-  width: 20px;
-  top: 2px;
-}
-.social-login a:first-child{
-  background-color: #49639F;
-}
-.social-login a:last-child{
-  background-color: #DF4A32;
-}
-.email-login,.email-signup, .forgot-password-form {
-  position:relative;
-  float: left;
-  width: 100%;
-  height:auto;
-  margin-top: 20px;
-  text-align:center;
-}
-.u-form-group{
-  width:100%;
-  margin-bottom: 10px;
-}
-.u-form-group input[type="email"],
-.u-form-group input[type="password"]{
-  width: calc(50% - 22px);
-  height:45px;
-  outline: none;
-  border: 1px solid #ddd;
-  padding: 0 10px;
-  border-radius: 2px;
-  color: #333;
-  font-size:0.8rem;
-  -webkit-transition:all 0.1s linear;
-  -moz-transition:all 0.1s linear;
-  transition:all 0.1s linear;
-}
-.u-form-group input:focus{
-  border-color: #358efb;
-}
-.u-form-group button{
-  width:50%;
-  background-color: #1CB94E;
-  border: none;
-  outline: none;
-  color: #fff;
-  font-size: 14px;
-  font-weight: normal;
-  padding: 14px 0;
-  border-radius: 2px;
-  text-transform: uppercase;
-}
-
-.form-controls {
-  input[type="submit"] {
-    border: none;
-    outline: none;
-    color: #fff;
-    width: 40%;
-    background-color: #1CB94E;
-    font-size: 14px;
-    font-weight: normal;
-    padding: 14px 0;
-    border-radius: 2px;
-    text-transform: uppercase;
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+.sign-up {
+  .inputUserIcon {
+    top:68px;
   }
-  .cancel-form{
-    text-decoration: none;
-    margin-left: 10px;
-    font-size: 14px;
-    font-weight: normal;
-    padding: 14px 0;
-    border-radius: 2px;
-    text-transform: uppercase;
+
+  .inputEmailIcon {
+    top: 134px;
+  }
+  .inputPassIcon {
+    top:202px;
+  }
+
+  button {
+    height: 197px;
+  }
+
+}
+.sign-in {
+  .inputEmailIcon {
+    top: 68px;
+  }
+  .inputPassIcon {
+    top:134px;
+  }
+
+  button {
+    height: 130px;
   }
 }
 
-input[type="cancel"] {
-  width:25%;
+.or {
+  h2 {
+    line-height: 10;
+    text-align: center;
+  }
+  //background: url("https://cdn2.iconfinder.com/data/icons/outline-business-planning-management-black-set-2/64/1-98-128.png") no-repeat;
 }
-.forgot-password{
-  width:50%;
-  text-align: left;
-  text-decoration: underline;
-  color: #888;
-  font-size: 0.75rem;
+
+.sign-up, .sign-in {
+  /* zocial */
+  [class*="entypo-"]:before {
+    font-family: 'entypo', sans-serif;
+  }
+
+  h2 {
+    color:rgba(255,255,255,.8);
+    margin-left:12px;
+  }
+
+  form {
+    position:relative;
+    margin: 50px auto;
+    width: 380px;
+    height: auto;
+  }
+  input {
+    padding: 16px;
+    border-radius:7px;
+    border:0px;
+    background: rgba(255,255,255,.2);
+    display: block;
+    margin: 15px !important;
+    width: 300px;
+    color:white;
+    height: 54px;
+  }
+  input:focus {
+    outline-color: rgba(0,0,0,0);
+    background: rgba(255,255,255,.95);
+    color: #e74c3c;
+  }
+  button {
+    float:right;
+    width: 50px;
+    border: 0px;
+    background: #e74c3c;
+    border-radius:7px;
+    padding: 10px;
+    color:white;
+  }
+  .inputUserIcon {
+    position:absolute;
+    right: 80px;
+    color:white;
+  }
+
+  .inputEmailIcon {
+    position: absolute;;
+    right: 80px;
+    color:white;
+  }
+  .inputPassIcon {
+    position:absolute;
+    right: 80px;
+    color:white;
+  }
+
+  input::-webkit-input-placeholder {
+    color: white;
+  }
+
+  input:focus::-webkit-input-placeholder {
+    color: #e74c3c;
+  }
+  .social-container {
+    .social-divide {
+      width: 100%;
+      text-align: center;
+      border-bottom: 1px solid #333;
+      line-height: 0.1em;
+      margin: 10px 0 20px;
+    }
+
+    .social-divide span {
+      padding: 0 10px;
+    }
+    a {
+      display: flex;
+      width:30px;
+      svg {
+        height: 30px;
+      }
+    }
+  }
 }
+
+
+
+
+
+
+
+
+
+

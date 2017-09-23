@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse" role="navigation">
+<nav class="header navbar navbar-inverse" role="navigation">
     <div class="navbar-header">
         <a class="navbar-brand" href="/">Unrecognized Voices</a>
     </div>
@@ -23,35 +23,29 @@
                 </form>
             </li>
         </ul>
-        <ul class="nav navbar-nav pull-right">
         <% if user_signed_in? %>
-              <li>
-                  <a href="/settings/profile" class="profile-picture" style="padding: 0px;">
-                    <img src="https://secure.gravatar.com/avatar/2f05a5d3273d54e90f1ad6dca5eb97bc?s=47" />
-                  </a>
-              </li>
-              <li>
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%=current_user.display_name%> <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                      <li><a href="/settings/profile">Profile</a></li>
-                      <li><a href="/settings/friends">Friends</a></li>
-                      <li><a href="/settings/favorites">Favorites</a></li>
-                      <li><a href="/settings/settings">Settings</a></li>
-                      <li role="separator" class="divider"></li>
-                      <li><a rel="nofollow" data-method="delete" href="/users/logout">Logout</a></li>
-                  </ul>
-              </li>
-              <!--<li id="notification-bell">-->
-                  <!--<%= render partial: '/layouts/notification_bell', locals: {unread_notification_count: @unread_notification_count, notifications:  @notifications}%>-->
-              <!--</li>-->
+          <div class="pull-right btn-group">
+            <button type="button" class="btn btn-default"><%=current_user.display_name%></button>
+            <!--<a href=<%=current_user.url%> class="profile-picture" style="padding: 0px;">--> <!--<img src="https://secure.gravatar.com/avatar/2f05a5d3273d54e90f1ad6dca5eb97bc?s=47" />--> <!--</a>-->
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-expanded="false">
+              <li><a href="#">Profile</a></li>
+              <li><a href="#">Followed Items</a></li>
+              <li class="divider"></li>
+              <li><%= link_to "Logout", destroy_user_session_path %></li>
+            </ul>
+          </div>
         <% else %>
-          <li>
-              <%= link_to "Sign In", new_user_session_path %>
-          </li>
-          <li>
-              <%= link_to "Sign Up", new_user_registration_path %>
-          </li>
+          <ul class="pull-right">
+            <li>
+                <%= link_to "Sign In", new_user_session_path %>
+            </li>
+            <li>
+                <%= link_to "Sign Up", new_user_registration_path %>
+            </li>
+          </ul>
         <% end %>
-        </ul>
     </div>
 </nav>

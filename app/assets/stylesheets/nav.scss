@@ -1,5 +1,9 @@
 .navbar {
   margin: 0 !important;
+  position: fixed !important;
+  width: 100% !important;
+  background: none !important;
+  border: none !important;
 }
 
 .search-form .form-group {
@@ -35,8 +39,7 @@
 }
 .search-form .form-group:hover,
 .search-form .form-group.hover {
-  width: 100%;
-  border-radius: 4px 25px 25px 4px;
+  width: 500px;
 }
 .search-form .form-group span.form-control-feedback {
   position: absolute;

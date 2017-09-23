@@ -1,3 +1,42 @@
 // Place all the styles related to the bill controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.bills {
+  .nav {
+    border-bottom: 1px solid #444 !important;
+    li {
+      width: 25%;
+      text-align: center;
+      &.active {
+        a {
+          color: orange !important;
+          background-color: #222 !important;
+        }
+      }
+      a {
+        border: none !important;
+        &:hover {
+          color: orange !important;
+          background-color: #222 !important;
+        }
+      }
+    }
+  }
+  .section {
+    .title {
+      height: 30px;
+    }
+    .content {
+      display: inline-block;
+      .media {
+        border: 2px solid #333;
+        border-radius: 15px;
+        padding: 7px;
+        margin-left: 10px;
+        &:hover {
+          opacity: 0.3;
+        }
+      }
+    }
+  }
+}

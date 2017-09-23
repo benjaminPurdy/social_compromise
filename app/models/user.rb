@@ -41,4 +41,8 @@ class User < ActiveRecord::Base
   def password_required?
     super && provider.blank?
   end
+
+  def url
+    '/users/user/' + self.id.to_s
+  end
 end

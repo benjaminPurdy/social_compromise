@@ -1,37 +1,12 @@
-<div class="login-page">
-    <div class="lb-header">
-        <a href=<%=new_session_path(resource_name)%> class="active" id="login-box-link">Login</a>
-        <a href=<%=new_registration_path(resource_name)%> id="signup-box-link">Sign Up</a>
-    </div>
-    <div class="social-login">
-        <%= link_to "Sign in with Facebook", omniauth_authorize_path(resource_name, "facebook") %>
-        <%= link_to "Sign in with Google", omniauth_authorize_path(resource_name, "google_oauth2") %>
-    </div>
-
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "email-login"}) do |f| %>
-    <div class="field">
-        <div class="u-form-group">
-            <input placeholder="Email" type="email" value="" name="user[email]" id="user_email">
-        </div>
-    </div>
-
-    <div class="u-form-group">
-        <input placeholder="Password" type="password" name="user[password]" id="user_password">
-    </div>
-
-    <% if devise_mapping.rememberable? -%>
-      <div class="field">
-        <input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me">
-        <%= f.label :remember_me%>
-      </div>
-    <% end -%>
-
-    <div class="form-controls">
-        <%= f.submit "Log in" %>
-        <a class='cancel-form' href="/"> Cancel </a>
-    </div>
-    <div class="u-form-group">
-        <a href=<%=new_password_path(resource_name)%> class="forgot-password">Forgot password?</a>
-    </div>
-  <% end %>
+<div class="login">
+  <form action="">
+    <h2><span class="entypo-login"></span> Login</h2>
+    <button class="submit"><span class="entypo-lock"></span></button>
+    <span class="entypo-user inputUserIcon"></span>
+    <input type="text" class="user" placeholder="username"/>
+    <span class="entypo-mail inputEmailIcon"></span>
+    <input type="text" class="user" placeholder="E-Mail"/>
+    <span class="entypo-key inputPassIcon"></span>
+    <input type="password" class="pass"placeholder="password"/>
+  </form>
 </div>

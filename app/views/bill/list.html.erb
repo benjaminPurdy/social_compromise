@@ -1,1 +1,18 @@
-In Bill(s)
+<div class="bills">
+  <ul class="nav nav-tabs">
+    <li role="presentation" class="<%= 'active' if @tab == 'all'%>"><%= link_to 'All', bill_change_path('all'), remote: true%></li>
+    <li role="presentation" class="<%= 'active' if @tab == 'local'%>"><%= link_to 'Local', bill_change_path('local'), remote: true%></li>
+    <li role="presentation" class="<%= 'active' if @tab == 'house'%>"><%= link_to 'House', bill_change_path('house'), remote: true%></li>
+    <li role="presentation" class="<%= 'active' if @tab == 'senate'%>"><%= link_to 'Senate', bill_change_path('senate'), remote: true%></li>
+  </ul>
+
+
+
+  <div id="bills_container">
+    <%= render partial: '/bill/bills_container',
+               locals: {local_label: @local_label, local_bills: @local_bills,
+                        senate_label: @senate_label, senate_bills: @senate_bills,
+                        house_label: @house_label, house_bills: @house_bills,
+                        tab: @tab}%>
+  </div>
+</div>

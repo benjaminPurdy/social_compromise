@@ -1,4 +1,12 @@
+@import "variables";
+
 .header {
+  a {
+      color: $special-link-not-visited-color !important;
+  }
+  a:hover {
+    color: $special-link-hover-color !important;
+  }
   .btn-group {
     margin-top: 5px;
   }

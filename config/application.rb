@@ -26,7 +26,9 @@ module SocialCompromise
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
-    config.social_compromise = YAML.load_file(Rails.root.join('config', 'social_compromise_config.yml'))
+    config.assets.enable = true
+
+    config.unrecognized_voices = YAML.load_file(Rails.root.join('config', 'unrecognized_voices_config.yml'))
     Elasticsearch::Model.client = Elasticsearch::Client.new host: (ENV['SEARCHBOX_URL'] || 'localhost:9200')
     config.assets.precompile += %w( '.svg' )
   end

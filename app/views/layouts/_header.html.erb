@@ -1,51 +1,53 @@
 <nav class="header navbar navbar-inverse" role="navigation">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="/">Unrecognized Voices</a>
-    </div>
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav">
-            <li class="active">
-                <a href="/#about_us">About us</a>
-            </li>
-            <li>
-                <a href="/#features">Features</a>
-            </li>
-            <li>
-                <a href="/#contact_us">Contact Us</a>
-            </li>
-            <li>
-                <form action="/search?page=1" class="search-form" _lpchecked="1">
-                    <div class="form-group has-feedback">
-                        <label for="q" class="sr-only">Search</label>
-                        <input type="text" class="form-control" name="q" id="search" placeholder="search">
-                        <span class="glyphicon glyphicon-search form-control-feedback"></span>
-                    </div>
-                </form>
-            </li>
-        </ul>
-        <% if user_signed_in? %>
-          <div class="pull-right btn-group">
-            <button type="button" class="btn btn-default"><%=current_user.display_name%></button>
-            <!--<a href=<%=current_user.url%> class="profile-picture" style="padding: 0px;">--> <!--<img src="https://secure.gravatar.com/avatar/2f05a5d3273d54e90f1ad6dca5eb97bc?s=47" />--> <!--</a>-->
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu" aria-expanded="false">
-              <li><a href="#">Profile</a></li>
-              <li><a href="#">Followed Items</a></li>
-              <li class="divider"></li>
-              <li><%= link_to "Logout", destroy_user_session_path %></li>
-            </ul>
+  <div class="navbar-header">
+    <a class="navbar-brand" href="/">Unrecognized Voices</a>
+  </div>
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+      <li class="active">
+        <a href="/#about_us">About us</a>
+      </li>
+      <li>
+        <a href="/#features">Features</a>
+      </li>
+      <li>
+        <a href="/#contact_us">Contact Us</a>
+      </li>
+      <li>
+        <form action="/search?page=1" class="search-form" _lpchecked="1">
+          <div class="form-group has-feedback">
+            <label for="q" class="sr-only">Search</label>
+            <input type="text" class="form-control" name="q" id="search" placeholder="search">
+            <span class="glyphicon glyphicon-search form-control-feedback"></span>
           </div>
-        <% else %>
-          <ul class="pull-right">
-            <li>
-                <%= link_to "Sign In", new_user_session_path %>
-            </li>
-            <li>
-                <%= link_to "Sign Up", new_user_registration_path %>
-            </li>
+        </form>
+      </li>
+    </ul>
+    <% if user_signed_in? %>
+        <div class="pull-right btn-group">
+          <button type="button" class="btn btn-default"><%=current_user.display_name%></button>
+          <!--<a href=<%=current_user.url%> class="profile-picture" style="padding: 0px;">--> <!--<img src="https://secure.gravatar.com/avatar/2f05a5d3273d54e90f1ad6dca5eb97bc?s=47" />--> <!--</a>-->
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu" aria-expanded="false">
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Followed Items</a></li>
+            <li class="divider"></li>
+            <li><%= link_to "Logout", destroy_user_session_path %></li>
           </ul>
-        <% end %>
-    </div>
+        </div>
+    <% else %>
+        <ul class="pull-right">
+
+          <li>
+            <!--<%= link_to "Sign In", new_user_session_path %>-->
+            <%= link_to "Sign In/ Sign Up", new_user_registration_path, :class => "btn btn-primary" %>
+          </li>
+          <!--<li>-->
+            <!--<%= link_to "Sign Up", new_user_registration_path %>-->
+          <!--</li>-->
+        </ul>
+    <% end %>
+  </div>
 </nav>

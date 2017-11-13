@@ -17,6 +17,6 @@
 #   runner "AnotherModel.prune_old_records"
 # end
 
-every :day, :at => '02:30pm' do
-  rake 'rotten_tomato:seed_movies'
-end
+# every :day, :at => '02:30pm' do
+#   rake 'rotten_tomato:seed_movies'
+# end

@@ -1,9 +1,4 @@
-# social_compromise
-Pretty basic to get this up and running. Just run bundle update and insert your keys from:
-https://console.developers.google.com/project/master-legacy-838/apiui/credential?authuser=0
-and
-https://developers.facebook.com/apps/1029155713780489/dashboard/
-up into your bashrc as the correct variables. Source that and get it going.
-Also, make sure that you create the amistad tables via:
-rails generate amistad:install
+# Particle JS
+Pretty basic project with only the Particle JS parts of the project in it. Just bundle install and 
+navigate to it at localhost:3000. No db dependencies or anything.
 

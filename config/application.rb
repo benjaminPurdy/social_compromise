@@ -1,5 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
+# removed require rails/all because i didnt want database dependencies
+
 require "rails"
 # Pick the frameworks you want:
 require "active_model/railtie"
